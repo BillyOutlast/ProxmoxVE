@@ -13,6 +13,11 @@ var_disk="${var_disk:-8}"
 var_os="${var_os:-debian}"
 var_version="${var_version:-13}"
 var_unprivileged="${var_unprivileged:-1}"
+var_ssh="${var_ssh:-yes}"
+
+if [[ -z "${var_ssh_authorized_key:-}" ]] && [[ -r /root/.ssh/authorized_keys ]]; then
+  var_ssh_authorized_key="$(grep -m1 -E '^(ssh-(rsa|ed25519)|ecdsa-sha2-nistp256|sk-(ssh-ed25519|ecdsa-sha2-nistp256))[[:space:]]+' /root/.ssh/authorized_keys || true)"
+fi
 
 header_info "$APP"
 variables
