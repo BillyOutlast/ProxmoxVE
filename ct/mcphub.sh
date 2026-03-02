@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/build.func)
+SCRIPT_REPO="${SCRIPT_REPO:-BillyOutlast/ProxmoxVE}"
+export SCRIPT_REPO
+source <(curl -fsSL "https://raw.githubusercontent.com/${SCRIPT_REPO}/main/misc/build.func")
 # Copyright (c) 2021-2026 community-scripts ORG
 # Author: ChatGPT
 # License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
