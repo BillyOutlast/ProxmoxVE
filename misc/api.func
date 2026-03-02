@@ -124,6 +124,7 @@ detect_repo_source
 #   * Generic/Shell errors (1-3, 10, 124-132, 134, 137, 139, 141, 143-146)
 #   * curl/wget errors (4-8, 16, 18, 22-28, 30, 32-36, 39, 44-48, 51-52, 55-57, 59, 61, 63, 75, 78-79, 92, 95)
 #   * Package manager errors (APT, DPKG: 100-102, 255)
+#   * Script Validation & Setup (103-123)
 #   * BSD sysexits (64-78)
 #   * Systemd/Service errors (150-154)
 #   * Python/pip/uv errors (160-162)
@@ -131,7 +132,9 @@ detect_repo_source
 #   * MySQL/MariaDB errors (180-183)
 #   * MongoDB errors (190-193)
 #   * Proxmox custom codes (200-231)
+#   * Tools & Addon Scripts (232-238)
 #   * Node.js/npm errors (239, 243, 245-249)
+#   * Application Install/Update errors (250-254)
 # - Returns description string for given exit code
 # ------------------------------------------------------------------------------
 explain_exit_code() {
@@ -188,6 +191,29 @@ explain_exit_code() {
   100) echo "APT: Package manager error (broken packages / dependency problems)" ;;
   101) echo "APT: Configuration error (bad sources.list, malformed config)" ;;
   102) echo "APT: Lock held by another process (dpkg/apt still running)" ;;
+
+  # --- Script Validation & Setup (103-123) ---
+  103) echo "Validation: Shell is not Bash" ;;
+  104) echo "Validation: Not running as root (or invoked via sudo)" ;;
+  105) echo "Validation: Proxmox VE version not supported" ;;
+  106) echo "Validation: Architecture not supported (ARM / PiMox)" ;;
+  107) echo "Validation: Kernel key parameters unreadable" ;;
+  108) echo "Validation: Kernel key limits exceeded" ;;
+  109) echo "Proxmox: No available container ID after max attempts" ;;
+  110) echo "Proxmox: Failed to apply default.vars" ;;
+  111) echo "Proxmox: App defaults file not available" ;;
+  112) echo "Proxmox: Invalid install menu option" ;;
+  113) echo "LXC: Under-provisioned — user aborted update" ;;
+  114) echo "LXC: Storage too low — user aborted update" ;;
+  115) echo "Download: install.func download failed or incomplete" ;;
+  116) echo "Proxmox: Default bridge vmbr0 not found" ;;
+  117) echo "LXC: Container did not reach running state" ;;
+  118) echo "LXC: No IP assigned to container after timeout" ;;
+  119) echo "Proxmox: No valid storage for rootdir content" ;;
+  120) echo "Proxmox: No valid storage for vztmpl content" ;;
+  121) echo "LXC: Container network not ready (no IP after retries)" ;;
+  122) echo "LXC: No internet connectivity — user declined to continue" ;;
+  123) echo "LXC: Local IP detection failed" ;;
 
   # --- BSD sysexits.h (64-78) ---
   64) echo "Usage error (wrong arguments)" ;;
@@ -276,7 +302,17 @@ explain_exit_code() {
   223) echo "Proxmox: Template not available after download" ;;
   224) echo "Proxmox: PBS storage is for backups only" ;;
   225) echo "Proxmox: No template available for OS/Version" ;;
+  226) echo "Proxmox: VM disk import or post-creation setup failed" ;;
   231) echo "Proxmox: LXC stack upgrade failed" ;;
+
+  # --- Tools & Addon Scripts (232-238) ---
+  232) echo "Tools: Wrong execution environment (run on PVE host, not inside LXC)" ;;
+  233) echo "Tools: Application not installed (update prerequisite missing)" ;;
+  234) echo "Tools: No LXC containers found or available" ;;
+  235) echo "Tools: Backup or restore operation failed" ;;
+  236) echo "Tools: Required hardware not detected" ;;
+  237) echo "Tools: Dependency package installation failed" ;;
+  238) echo "Tools: OS or distribution not supported for this addon" ;;
 
   # --- Node.js / npm / pnpm / yarn (239-249) ---
   239) echo "npm/Node.js: Unexpected runtime error or dependency failure" ;;
@@ -286,6 +322,13 @@ explain_exit_code() {
   247) echo "Node.js: Fatal internal error" ;;
   248) echo "Node.js: Invalid C++ addon / N-API failure" ;;
   249) echo "npm/pnpm/yarn: Unknown fatal error" ;;
+
+  # --- Application Install/Update Errors (250-254) ---
+  250) echo "App: Download failed or version not determined" ;;
+  251) echo "App: File extraction failed (corrupt or incomplete archive)" ;;
+  252) echo "App: Required file or resource not found" ;;
+  253) echo "App: Data migration required — update aborted" ;;
+  254) echo "App: User declined prompt or input timed out" ;;
 
   # --- DPKG ---
   255) echo "DPKG: Fatal internal error" ;;
@@ -350,6 +393,11 @@ get_error_text() {
     logfile="$BUILD_LOG"
   fi
 
+  # Try SILENT_LOGFILE as last resort (captures $STD command output)
+  if [[ -z "$logfile" || ! -s "$logfile" ]] && [[ -n "${SILENT_LOGFILE:-}" && -s "${SILENT_LOGFILE}" ]]; then
+    logfile="$SILENT_LOGFILE"
+  fi
+
   if [[ -n "$logfile" && -s "$logfile" ]]; then
     tail -n 20 "$logfile" 2>/dev/null | sed 's/\r$//' | sed 's/\x1b\[[0-9;]*[a-zA-Z]//g'
   fi
@@ -392,6 +440,13 @@ get_full_log() {
   if [[ -z "$logfile" || ! -s "$logfile" ]]; then
     if [[ -n "${BUILD_LOG:-}" && -s "${BUILD_LOG}" ]]; then
       logfile="$BUILD_LOG"
+    fi
+  fi
+
+  # Fall back to SILENT_LOGFILE (captures $STD command output)
+  if [[ -z "$logfile" || ! -s "$logfile" ]]; then
+    if [[ -n "${SILENT_LOGFILE:-}" && -s "${SILENT_LOGFILE}" ]]; then
+      logfile="$SILENT_LOGFILE"
     fi
   fi
 
@@ -632,18 +687,23 @@ EOF
   [[ "${DEV_MODE:-}" == "true" ]] && echo "[DEBUG] Sending to: $TELEMETRY_URL" >&2
   [[ "${DEV_MODE:-}" == "true" ]] && echo "[DEBUG] Payload: $JSON_PAYLOAD" >&2
 
-  # Fire-and-forget: never block, never fail
-  local http_code
-  if [[ "${DEV_MODE:-}" == "true" ]]; then
-    http_code=$(curl -sS -w "%{http_code}" -m "${TELEMETRY_TIMEOUT}" -X POST "${TELEMETRY_URL}" \
-      -H "Content-Type: application/json" \
-      -d "$JSON_PAYLOAD" -o /dev/stderr 2>&1) || true
-    echo "[DEBUG] HTTP response code: $http_code" >&2
-  else
-    curl -fsS -m "${TELEMETRY_TIMEOUT}" -X POST "${TELEMETRY_URL}" \
-      -H "Content-Type: application/json" \
-      -d "$JSON_PAYLOAD" &>/dev/null || true
-  fi
+  # Send initial "installing" record with retry.
+  # This record MUST exist for all subsequent updates to succeed.
+  local http_code="" attempt
+  for attempt in 1 2 3; do
+    if [[ "${DEV_MODE:-}" == "true" ]]; then
+      http_code=$(curl -sS -w "%{http_code}" -m "${TELEMETRY_TIMEOUT}" -X POST "${TELEMETRY_URL}" \
+        -H "Content-Type: application/json" \
+        -d "$JSON_PAYLOAD" -o /dev/stderr 2>&1) || http_code="000"
+      echo "[DEBUG] post_to_api attempt $attempt HTTP=$http_code" >&2
+    else
+      http_code=$(curl -sS -w "%{http_code}" -m "${TELEMETRY_TIMEOUT}" -X POST "${TELEMETRY_URL}" \
+        -H "Content-Type: application/json" \
+        -d "$JSON_PAYLOAD" -o /dev/null 2>/dev/null) || http_code="000"
+    fi
+    [[ "$http_code" =~ ^2[0-9]{2}$ ]] && break
+    [[ "$attempt" -lt 3 ]] && sleep 1
+  done
 
   POST_TO_API_DONE=true
 }
@@ -734,10 +794,15 @@ post_to_api_vm() {
 EOF
   )
 
-  # Fire-and-forget: never block, never fail
-  curl -fsS -m "${TELEMETRY_TIMEOUT}" -X POST "${TELEMETRY_URL}" \
-    -H "Content-Type: application/json" \
-    -d "$JSON_PAYLOAD" &>/dev/null || true
+  # Send initial "installing" record with retry (must succeed for updates to work)
+  local http_code="" attempt
+  for attempt in 1 2 3; do
+    http_code=$(curl -sS -w "%{http_code}" -m "${TELEMETRY_TIMEOUT}" -X POST "${TELEMETRY_URL}" \
+      -H "Content-Type: application/json" \
+      -d "$JSON_PAYLOAD" -o /dev/null 2>/dev/null) || http_code="000"
+    [[ "$http_code" =~ ^2[0-9]{2}$ ]] && break
+    [[ "$attempt" -lt 3 ]] && sleep 1
+  done
 
   POST_TO_API_DONE=true
 }
@@ -833,7 +898,7 @@ post_update_to_api() {
   esac
 
   # For failed/unknown status, resolve exit code and error description
-  local short_error=""
+  local short_error="" medium_error=""
   if [[ "$pb_status" == "failed" ]] || [[ "$pb_status" == "unknown" ]]; then
     if [[ "$raw_exit_code" =~ ^[0-9]+$ ]]; then
       exit_code="$raw_exit_code"
@@ -853,6 +918,18 @@ post_update_to_api() {
     short_error=$(json_escape "$(explain_exit_code "$exit_code")")
     error_category=$(categorize_error "$exit_code")
     [[ -z "$error" ]] && error="Unknown error"
+
+    # Build medium error for attempt 2: explanation + last 100 log lines (≤16KB)
+    # This is the critical middle ground between full 120KB log and generic-only description
+    local medium_log=""
+    medium_log=$(get_full_log 16384) || true # 16KB max
+    if [[ -z "$medium_log" ]]; then
+      medium_log=$(get_error_text) || true
+    fi
+    local medium_full
+    medium_full=$(build_error_string "$exit_code" "$medium_log")
+    medium_error=$(json_escape "$medium_full")
+    [[ -z "$medium_error" ]] && medium_error="$short_error"
   fi
 
   # Calculate duration if timer was started
@@ -869,6 +946,11 @@ post_update_to_api() {
 
   local http_code=""
 
+  # Strip 'G' suffix from disk size (VMs set DISK_SIZE=32G)
+  local DISK_SIZE_API="${DISK_SIZE:-0}"
+  DISK_SIZE_API="${DISK_SIZE_API%G}"
+  [[ ! "$DISK_SIZE_API" =~ ^[0-9]+$ ]] && DISK_SIZE_API=0
+
   # ── Attempt 1: Full payload with complete error text (includes full log) ──
   local JSON_PAYLOAD
   JSON_PAYLOAD=$(
@@ -880,7 +962,7 @@ post_update_to_api() {
     "nsapp": "${NSAPP:-unknown}",
     "status": "${pb_status}",
     "ct_type": ${CT_TYPE:-1},
-    "disk_size": ${DISK_SIZE:-0},
+    "disk_size": ${DISK_SIZE_API},
     "core_count": ${CORE_COUNT:-0},
     "ram_size": ${RAM_SIZE:-0},
     "os_type": "${var_os:-}",
@@ -911,7 +993,7 @@ EOF
     return 0
   fi
 
-  # ── Attempt 2: Short error text (no full log) ──
+  # ── Attempt 2: Medium error text (truncated log ≤16KB instead of full 120KB) ──
   sleep 1
   local RETRY_PAYLOAD
   RETRY_PAYLOAD=$(
@@ -923,7 +1005,7 @@ EOF
     "nsapp": "${NSAPP:-unknown}",
     "status": "${pb_status}",
     "ct_type": ${CT_TYPE:-1},
-    "disk_size": ${DISK_SIZE:-0},
+    "disk_size": ${DISK_SIZE_API},
     "core_count": ${CORE_COUNT:-0},
     "ram_size": ${RAM_SIZE:-0},
     "os_type": "${var_os:-}",
@@ -931,7 +1013,7 @@ EOF
     "pve_version": "${pve_version}",
     "method": "${METHOD:-default}",
     "exit_code": ${exit_code},
-    "error": "${short_error}",
+    "error": "${medium_error}",
     "error_category": "${error_category}",
     "install_duration": ${duration},
     "cpu_vendor": "${cpu_vendor}",
@@ -954,7 +1036,7 @@ EOF
     return 0
   fi
 
-  # ── Attempt 3: Minimal payload (bare minimum to set status) ──
+  # ── Attempt 3: Minimal payload with medium error (bare minimum to set status) ──
   sleep 2
   local MINIMAL_PAYLOAD
   MINIMAL_PAYLOAD=$(
@@ -966,7 +1048,7 @@ EOF
     "nsapp": "${NSAPP:-unknown}",
     "status": "${pb_status}",
     "exit_code": ${exit_code},
-    "error": "${short_error}",
+    "error": "${medium_error}",
     "error_category": "${error_category}",
     "install_duration": ${duration}
 }

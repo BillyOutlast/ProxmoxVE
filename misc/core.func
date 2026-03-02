@@ -276,7 +276,7 @@ shell_check() {
     msg_error "Your default shell is currently not set to Bash. To use these scripts, please switch to the Bash shell."
     echo -e "\nExiting..."
     sleep 2
-    exit 1
+    exit 103
   fi
 }
 
@@ -293,7 +293,7 @@ root_check() {
     msg_error "Please run this script as root."
     echo -e "\nExiting..."
     sleep 2
-    exit 1
+    exit 104
   fi
 }
 
@@ -314,7 +314,7 @@ pve_check() {
     if ((MINOR < 0 || MINOR > 9)); then
       msg_error "This version of Proxmox VE is not supported."
       msg_error "Supported: Proxmox VE version 8.0 – 8.9"
-      exit 1
+      exit 105
     fi
     return 0
   fi
@@ -325,7 +325,7 @@ pve_check() {
     if ((MINOR < 0 || MINOR > 1)); then
       msg_error "This version of Proxmox VE is not yet supported."
       msg_error "Supported: Proxmox VE version 9.0 – 9.1"
-      exit 1
+      exit 105
     fi
     return 0
   fi
@@ -333,7 +333,7 @@ pve_check() {
   # All other unsupported versions
   msg_error "This version of Proxmox VE is not supported."
   msg_error "Supported versions: Proxmox VE 8.0 – 8.9 or 9.0 – 9.1"
-  exit 1
+  exit 105
 }
 
 # ------------------------------------------------------------------------------
@@ -348,7 +348,7 @@ arch_check() {
     msg_error "This script will not work with PiMox (ARM architecture detected)."
     msg_warn "Visit https://github.com/asylumexp/Proxmox for ARM64 support."
     sleep 2
-    exit 1
+    exit 106
   fi
 }
 
@@ -848,7 +848,9 @@ exit_script() {
 get_header() {
   local app_name=$(echo "${APP,,}" | tr -d ' ')
   local app_type=${APP_TYPE:-ct} # Default to 'ct' if not set
-  local header_url="https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/${app_type}/headers/${app_name}"
+  local header_dir="${app_type}"
+  [[ "$app_type" == "addon" ]] && header_dir="tools"
+  local header_url="https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/${header_dir}/headers/${app_name}"
   local local_header_path="/usr/local/community-scripts/headers/${app_type}/${app_name}"
 
   mkdir -p "$(dirname "$local_header_path")"
@@ -930,18 +932,13 @@ is_alpine() {
 #
 # - Determines if script should run in verbose mode
 # - Checks VERBOSE and var_verbose variables
-# - Also returns true if not running in TTY (pipe/redirect scenario)
 # - Used by msg_info() to decide between spinner and static output
+# - Note: Non-TTY (pipe) scenarios are handled separately in msg_info()
+#   to allow spinner output to pass through pipes (e.g. lxc-attach | tee)
 # ------------------------------------------------------------------------------
 is_verbose_mode() {
   local verbose="${VERBOSE:-${var_verbose:-no}}"
-  local tty_status
-  if [[ -t 2 ]]; then
-    tty_status="interactive"
-  else
-    tty_status="not-a-tty"
-  fi
-  [[ "$verbose" != "no" || ! -t 2 ]]
+  [[ "$verbose" != "no" ]]
 }
 
 # ------------------------------------------------------------------------------

@@ -410,7 +410,52 @@ Exercise vigilance regarding copycat or coat-tailing sites that seek to exploit 
 
 </details>
 
+## 2026-03-02
+
+### 🆕 New Scripts
+
+  - Profilarr ([#12441](https://github.com/community-scripts/ProxmoxVE/pull/12441))
+
+### 🚀 Updated Scripts
+
+  - #### 🐞 Bug Fixes
+
+    - Tracearr: prepare for imminent v1.4.19 release [@durzo](https://github.com/durzo) ([#12413](https://github.com/community-scripts/ProxmoxVE/pull/12413))
+
+  - #### ✨ New Features
+
+    - Frigate: Bump to v0.17 [@MickLesk](https://github.com/MickLesk) ([#12474](https://github.com/community-scripts/ProxmoxVE/pull/12474))
+
+  - #### 💥 Breaking Changes
+
+    - Migrate: DokPloy, Komodo, Coolify, Dockge, Runtipi to Addons [@MickLesk](https://github.com/MickLesk) ([#12275](https://github.com/community-scripts/ProxmoxVE/pull/12275))
+
+  - #### 🔧 Refactor
+
+    - ref: replace generic exit 1 with specific exit codes in ct & install [@MickLesk](https://github.com/MickLesk) ([#12475](https://github.com/community-scripts/ProxmoxVE/pull/12475))
+
+### 💾 Core
+
+  - #### ✨ New Features
+
+    - tools.func: Improve stability with retry logic, caching, and debug mode [@MickLesk](https://github.com/MickLesk) ([#10351](https://github.com/community-scripts/ProxmoxVE/pull/10351))
+
+  - #### 🔧 Refactor
+
+    - core: standardize exit codes and add mappings [@MickLesk](https://github.com/MickLesk) ([#12467](https://github.com/community-scripts/ProxmoxVE/pull/12467))
+
+### 🌐 Website
+
+  - frontend: improve detail view badges, addon texts, and HTML title [@MickLesk](https://github.com/MickLesk) ([#12461](https://github.com/community-scripts/ProxmoxVE/pull/12461))
+
 ## 2026-03-01
+
+### 🚀 Updated Scripts
+
+  - #### 🐞 Bug Fixes
+
+    - Sparkyfitness: use pnpm [@tomfrenzel](https://github.com/tomfrenzel) ([#12445](https://github.com/community-scripts/ProxmoxVE/pull/12445))
+    - OpenArchiver: Fix installation [@tremor021](https://github.com/tremor021) ([#12447](https://github.com/community-scripts/ProxmoxVE/pull/12447))
 
 ## 2026-02-28
 
