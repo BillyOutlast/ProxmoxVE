@@ -61,6 +61,26 @@ EOF
 systemctl enable -q --now mcphub
 msg_ok "Created Service"
 
+msg_info "Configuring Console Auto-Login"
+mkdir -p /etc/systemd/system/getty@tty1.service.d
+cat <<EOF >/etc/systemd/system/getty@tty1.service.d/autologin.conf
+[Service]
+ExecStart=
+ExecStart=-/sbin/agetty --autologin root --noclear %I \$TERM
+EOF
+
+mkdir -p /etc/systemd/system/serial-getty@ttyS0.service.d
+cat <<EOF >/etc/systemd/system/serial-getty@ttyS0.service.d/autologin.conf
+[Service]
+ExecStart=
+ExecStart=-/sbin/agetty --autologin root --noclear %I \$TERM
+EOF
+
+systemctl daemon-reload
+systemctl restart getty@tty1.service 2>/dev/null || true
+systemctl restart serial-getty@ttyS0.service 2>/dev/null || true
+msg_ok "Configured Console Auto-Login"
+
 motd_ssh
 customize
 cleanup_lxc
