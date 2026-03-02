@@ -5,6 +5,12 @@
 # License: MIT | https://github.com/community-scripts/ProxmoxVE/raw/main/LICENSE
 # Source: https://github.com/samanhappy/mcphub | Docs: https://docs.mcphubx.com/
 
+if [[ -z "$FUNCTIONS_FILE_PATH" ]]; then
+  echo "This script is not intended to run directly."
+  echo "Use the CT entrypoint instead: ct/mcphub.sh"
+  exit 1
+fi
+
 source /dev/stdin <<<"$FUNCTIONS_FILE_PATH"
 color
 verb_ip6
