@@ -11,7 +11,7 @@
   "interface_port": 3000,
   "documentation": "https://docs.mcphubx.com/",
   "website": "https://github.com/samanhappy/mcphub",
-  "logo": "https://raw.githubusercontent.com/samanhappy/mcphub/main/assets/icon.svg",
+  "logo": "https://raw.githubusercontent.com/samanhappy/mcphub/main/assets/dashboard.png",
   "config_path": "/opt/mcphub/mcp_settings.json",
   "description": "MCPHub is a unified hub for centrally managing and routing multiple Model Context Protocol (MCP) servers through a single dashboard and API endpoint.",
   "install_methods": [

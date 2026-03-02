@@ -44,6 +44,7 @@ Type=simple
 WorkingDirectory=/opt/mcphub
 Environment=NODE_ENV=production
 Environment=PORT=3000
+Environment=MCPHUB_SETTING_PATH=/opt/mcphub/mcp_settings.json
 ExecStart=mcphub
 Restart=always
 RestartSec=5
