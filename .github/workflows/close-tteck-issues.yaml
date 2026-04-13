@@ -5,7 +5,7 @@ on:
 
 jobs:
   close_tteck_issues:
-    if: github.repository == 'community-scripts/ProxmoxVE'
+    if: github.repository == 'Heretek-AI/ProxmoxVE'
     runs-on: ubuntu-latest
     steps:
       - name: Auto-close if tteck script detected
@@ -21,11 +21,11 @@ jobs:
               const message = `Hello, it looks like you are referencing the **old tteck repo**.
 
             This repository is no longer used for active scripts.
-            **Please update your bookmarks** and use: [https://community-scripts.com](https://community-scripts.com)
+            **Please update your bookmarks** and use: [https://helper-scripts.com](https://helper-scripts.com)
                     
             Also make sure your Bash command starts with:
             \`\`\`bash
-            bash <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/ct/...)
+            bash <(curl -fsSL https://raw.githubusercontent.com/Heretek-AI/ProxmoxVE/main/ct/...)
             \`\`\`
             
             This issue is being closed automatically.`;
