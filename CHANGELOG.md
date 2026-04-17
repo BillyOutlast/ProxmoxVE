@@ -1,4 +1,4 @@
-﻿<div align="center">
+<div align="center">
   <a href="#">
     <img src="https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/images/logo.png" height="100px" />
  </a>
@@ -27,23 +27,8 @@ Exercise vigilance regarding copycat or coat-tailing sites that seek to exploit 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <details>
-<summary><h2>📜 History</h2></summary>
+<summary><h2>?? History</h2></summary>
 
 
 <details>
@@ -51,14 +36,7 @@ Exercise vigilance regarding copycat or coat-tailing sites that seek to exploit 
 
 
 <details>
-<summary><h4>April (11 entries)</h4></summary>
-
-[View April 2026 Changelog](.github/changelogs/2026/04.md)
-
-</details>
-
-<details>
-<summary><h4>March (31 entries)</h4></summary>
+<summary><h4>March (7 entries)</h4></summary>
 
 [View March 2026 Changelog](.github/changelogs/2026/03.md)
 
@@ -442,703 +420,977 @@ Exercise vigilance regarding copycat or coat-tailing sites that seek to exploit 
 
 </details>
 
-## 2026-04-16
+## 2026-03-11
 
-### 🚀 Updated Scripts
+## 2026-03-10
 
-  - #### 🐞 Bug Fixes
+### ?? New Scripts
 
-    - Add pnpm as a dependency to ghost-cli install [@YourFavoriteKyle](https://github.com/YourFavoriteKyle) ([#13789](https://github.com/community-scripts/ProxmoxVE/pull/13789))
+  - Upstream workflow sync 20260310 172703 [@BillyOutlast](https://github.com/BillyOutlast) ([#11](https://github.com/Heretek-AI/ProxmoxVE/pull/11))
 
-### 💾 Core
+## 2026-03-09
 
-  - #### ✨ New Features
+### ?? New Scripts
 
-    - core: wire ENABLE_MKNOD and ALLOW_MOUNT_FS into LXC features [@MickLesk](https://github.com/MickLesk) ([#13796](https://github.com/community-scripts/ProxmoxVE/pull/13796))
+  - hermes [@proxmoxved-migration-bot[bot]](https://github.com/proxmoxved-migration-bot[bot]) ([#6](https://github.com/Heretek-AI/ProxmoxVE/pull/6))
+### ?? Updated Scripts
 
-## 2026-04-15
+  - Pin Opencloud to 5.2.0 [@vhsdream](https://github.com/vhsdream) ([#12721](https://github.com/community-scripts/ProxmoxVE/pull/12721))
 
-### 🆕 New Scripts
+  - #### ?? Bug Fixes
 
-  - iGotify ([#13773](https://github.com/community-scripts/ProxmoxVE/pull/13773))
-- GitHub-Runner ([#13709](https://github.com/community-scripts/ProxmoxVE/pull/13709))
-- Revert "Remove low-install-count CT scripts and installers (#13570)" [@CrazyWolf13](https://github.com/CrazyWolf13) ([#13752](https://github.com/community-scripts/ProxmoxVE/pull/13752))
+    - [Hotfix] qBittorrent: Disable UPnP port forwarding by default [@vhsdream](https://github.com/vhsdream) ([#12728](https://github.com/community-scripts/ProxmoxVE/pull/12728))
+    - [Quickfix] Opencloud: ensure correct case for binary [@vhsdream](https://github.com/vhsdream) ([#12729](https://github.com/community-scripts/ProxmoxVE/pull/12729))
+    - Omada: Bump libssl [@MickLesk](https://github.com/MickLesk) ([#12724](https://github.com/community-scripts/ProxmoxVE/pull/12724))
+    - openwebui: Ensure required dependencies [@MickLesk](https://github.com/MickLesk) ([#12717](https://github.com/community-scripts/ProxmoxVE/pull/12717))
+    - Frigate: try an OpenVino model build fallback [@MickLesk](https://github.com/MickLesk) ([#12704](https://github.com/community-scripts/ProxmoxVE/pull/12704))
+    - Change cronjob setup to use www-data user [@opastorello](https://github.com/opastorello) ([#12695](https://github.com/community-scripts/ProxmoxVE/pull/12695))
+    - RustDesk Server: Fix check_for_gh_release function call [@tremor021](https://github.com/tremor021) ([#12694](https://github.com/community-scripts/ProxmoxVE/pull/12694))
 
-### 🚀 Updated Scripts
+  - #### ? New Features
 
-  - #### 🐞 Bug Fixes
+    - feat: improve zigbee2mqtt backup handler [@MickLesk](https://github.com/MickLesk) ([#12714](https://github.com/community-scripts/ProxmoxVE/pull/12714))
 
-    - [alpine-nextcloud] Update Nginx MIME types to support .mjs files [@GuiltyFox](https://github.com/GuiltyFox) ([#13771](https://github.com/community-scripts/ProxmoxVE/pull/13771))
-    - Domain Monitor: Fix file ownership after update [@tremor021](https://github.com/tremor021) ([#13759](https://github.com/community-scripts/ProxmoxVE/pull/13759))
+  - #### ?? Breaking Changes
 
-  - #### 💥 Breaking Changes
+    - Reactive Resume: rewrite for v5 using original repo amruthpilla/reactive-resume [@MickLesk](https://github.com/MickLesk) ([#12705](https://github.com/community-scripts/ProxmoxVE/pull/12705))
 
-    - Reitti: refactor scripts for v4 - remove RabbitMQ and Photon [@MickLesk](https://github.com/MickLesk) ([#13728](https://github.com/community-scripts/ProxmoxVE/pull/13728))
+### ?? Core
 
-  - #### 🔧 Refactor
+  - #### ? New Features
 
-    - Semaphore: add BoltDB to SQLite migration [@tremor021](https://github.com/tremor021) ([#13779](https://github.com/community-scripts/ProxmoxVE/pull/13779))
+    - tools: add Alpine (apk) support to ensure_dependencies and is_package_installed [@MickLesk](https://github.com/MickLesk) ([#12703](https://github.com/community-scripts/ProxmoxVE/pull/12703))
+    - tools.func: extend hwaccel with ROCm  [@MickLesk](https://github.com/MickLesk) ([#12707](https://github.com/community-scripts/ProxmoxVE/pull/12707))
 
-### 📚 Documentation
+### ?? Website
 
-  - cleanup: remove docs/, update README & CONTRIBUTING, fix repo config [@MickLesk](https://github.com/MickLesk) ([#13770](https://github.com/community-scripts/ProxmoxVE/pull/13770))
+  - #### ? New Features
 
-## 2026-04-14
+    - feat: add CopycatWarningToast component for user warnings [@BramSuurdje](https://github.com/BramSuurdje) ([#12733](https://github.com/community-scripts/ProxmoxVE/pull/12733))
 
-### 🚀 Updated Scripts
+## 2026-03-08
 
-  - Immich: Pin photo-processing library revisions [@vhsdream](https://github.com/vhsdream) ([#13748](https://github.com/community-scripts/ProxmoxVE/pull/13748))
+### ?? Updated Scripts
 
-  - #### 🐞 Bug Fixes
+  - #### ?? Bug Fixes
 
-    - BentoPDF: Nginx fixes [@tremor021](https://github.com/tremor021) ([#13741](https://github.com/community-scripts/ProxmoxVE/pull/13741))
-    - Zerobyte: add git to dependencies to fix bun install failure [@Copilot](https://github.com/Copilot) ([#13721](https://github.com/community-scripts/ProxmoxVE/pull/13721))
-    - alpine-nextcloud-install: do not use deprecated nginx config [@AlexanderStein](https://github.com/AlexanderStein) ([#13726](https://github.com/community-scripts/ProxmoxVE/pull/13726))
+    - [Fix] Immich: chown install dir before machine-learning update [@vhsdream](https://github.com/vhsdream) ([#12684](https://github.com/community-scripts/ProxmoxVE/pull/12684))
+    - [Fix] Scanopy: Build generate-fixtures [@vhsdream](https://github.com/vhsdream) ([#12686](https://github.com/community-scripts/ProxmoxVE/pull/12686))
+    - fix: rustdeskserver: use correct repo string [@CrazyWolf13](https://github.com/CrazyWolf13) ([#12682](https://github.com/community-scripts/ProxmoxVE/pull/12682))
+    - NZBGet: Fixes for RAR5 handling [@tremor021](https://github.com/tremor021) ([#12675](https://github.com/community-scripts/ProxmoxVE/pull/12675))
 
-  - #### ✨ New Features
+### ?? Website
 
-    - Mealie: support v3.15+ Nuxt 4 migration [@MickLesk](https://github.com/MickLesk) ([#13731](https://github.com/community-scripts/ProxmoxVE/pull/13731))
+  - #### ?? Bug Fixes
 
-  - #### 🔧 Refactor
+    - LXC-Execute: Fix slug [@tremor021](https://github.com/tremor021) ([#12681](https://github.com/community-scripts/ProxmoxVE/pull/12681))
 
-    - Lyrion: correct service name and version file in update script [@MickLesk](https://github.com/MickLesk) ([#13734](https://github.com/community-scripts/ProxmoxVE/pull/13734))
-    - Changedetection: move env vars from service file to .env [@tremor021](https://github.com/tremor021) ([#13732](https://github.com/community-scripts/ProxmoxVE/pull/13732))
+## 2026-03-07
 
-## 2026-04-13
+### ?? New Scripts
 
-### 🚀 Updated Scripts
+  - ImmichFrame ([#12653](https://github.com/community-scripts/ProxmoxVE/pull/12653))
 
-  - #### 🐞 Bug Fixes
+### ?? Updated Scripts
 
-    - Slskd: Remove stale Soularr lock file on startup and redirect logs to stderr [@MickLesk](https://github.com/MickLesk) ([#13669](https://github.com/community-scripts/ProxmoxVE/pull/13669))
-    - Bambuddy: preserve database and archive on update [@Copilot](https://github.com/Copilot) ([#13706](https://github.com/community-scripts/ProxmoxVE/pull/13706))
+  - #### ?? Bug Fixes
 
-  - #### ✨ New Features
+    - Grocy: bump PHP version from 8.3 to 8.5 [@MickLesk](https://github.com/MickLesk) ([#12651](https://github.com/community-scripts/ProxmoxVE/pull/12651))
+    - Check for influxdb3 installation in update_script [@odin568](https://github.com/odin568) ([#12648](https://github.com/community-scripts/ProxmoxVE/pull/12648))
+    - Update Rdtclient to dotnet 10.0 [@asylumexp](https://github.com/asylumexp) ([#12638](https://github.com/community-scripts/ProxmoxVE/pull/12638))
+    - fix(immich): fix update script failing to add Debian testing repo when preferences file already exists [@Copilot](https://github.com/Copilot) ([#12631](https://github.com/community-scripts/ProxmoxVE/pull/12631))
 
-    - Immich: Pin version to 2.7.5 [@vhsdream](https://github.com/vhsdream) ([#13715](https://github.com/community-scripts/ProxmoxVE/pull/13715))
-    - Bytestash: auto backup/restore data on update [@MickLesk](https://github.com/MickLesk) ([#13707](https://github.com/community-scripts/ProxmoxVE/pull/13707))
-    - OpenCloud: pin version to 6.0.0 [@vhsdream](https://github.com/vhsdream) ([#13691](https://github.com/community-scripts/ProxmoxVE/pull/13691))
+### ?? Core
 
-  - #### 💥 Breaking Changes
+  - #### ? New Features
 
-    - Mealie: pin version to v3.14.0 in install and update scripts [@Copilot](https://github.com/Copilot) ([#13724](https://github.com/community-scripts/ProxmoxVE/pull/13724))
+    - tools: add interactive GitHub PAT prompt on rate limit / auth failure [@MickLesk](https://github.com/MickLesk) ([#12652](https://github.com/community-scripts/ProxmoxVE/pull/12652))
 
-  - #### 🔧 Refactor
+### ?? Website
 
-    - core: remove unused TEMP_DIR mktemp leak in build_container / clean sonarqube [@MickLesk](https://github.com/MickLesk) ([#13708](https://github.com/community-scripts/ProxmoxVE/pull/13708))
+  - #### ?? Script Information
 
-## 2026-04-12
+    - Papra: update repository URL to papra-hq/papra [@MickLesk](https://github.com/MickLesk) ([#12650](https://github.com/community-scripts/ProxmoxVE/pull/12650))
 
-### 🚀 Updated Scripts
+## 2026-03-06
 
-  - #### 🐞 Bug Fixes
+### ?? Updated Scripts
 
-    - Alpine-Wakapi: Remove container checks in update_script function [@MickLesk](https://github.com/MickLesk) ([#13694](https://github.com/community-scripts/ProxmoxVE/pull/13694))
+  - #### ?? Bug Fixes
 
-  - #### 🔧 Refactor
+    - RustDesk Server: Fix update script [@tremor021](https://github.com/tremor021) ([#12625](https://github.com/community-scripts/ProxmoxVE/pull/12625))
+    - [Node-RED] Restart service after update [@Aurelien30000](https://github.com/Aurelien30000) ([#12621](https://github.com/community-scripts/ProxmoxVE/pull/12621))
+    - wealthfolio: update cors [@CrazyWolf13](https://github.com/CrazyWolf13) ([#12617](https://github.com/community-scripts/ProxmoxVE/pull/12617))
+    - CryptPad: Better update handling [@tremor021](https://github.com/tremor021) ([#12611](https://github.com/community-scripts/ProxmoxVE/pull/12611))
 
-    - IronClaw: Install keychain dependencies and launch in a DBus session [@MickLesk](https://github.com/MickLesk) ([#13692](https://github.com/community-scripts/ProxmoxVE/pull/13692))
-    - MeTube: Allow pnpm build scripts to fix ERR_PNPM_IGNORED_BUILDS [@MickLesk](https://github.com/MickLesk) ([#13668](https://github.com/community-scripts/ProxmoxVE/pull/13668))
+  - #### ? New Features
 
-## 2026-04-11
+    - RustDesk Server: Switch to updated repository [@tremor021](https://github.com/tremor021) ([#12083](https://github.com/community-scripts/ProxmoxVE/pull/12083))
 
-### 🚀 Updated Scripts
+  - #### ?? Breaking Changes
 
-  - #### 🐞 Bug Fixes
+    - Semaphore: Move from BoltDB to SQLite [@tremor021](https://github.com/tremor021) ([#12624](https://github.com/community-scripts/ProxmoxVE/pull/12624))
 
-    - Immich: Ensure newline before appending IMMICH_HELMET_FILE to .env [@MickLesk](https://github.com/MickLesk) ([#13667](https://github.com/community-scripts/ProxmoxVE/pull/13667))
+## 2026-03-05
 
-  - #### ✨ New Features
+### ?? New Scripts
 
-    - BentoPDF: replace http-server with nginx to fix WASM initialization timeout [@MickLesk](https://github.com/MickLesk) ([#13625](https://github.com/community-scripts/ProxmoxVE/pull/13625))
-    - Element Synapse: Add MatrixRTC configuration for Element Call support [@MickLesk](https://github.com/MickLesk) ([#13665](https://github.com/community-scripts/ProxmoxVE/pull/13665))
-    - RomM: Use ROMM_BASE_PATH from .env for symlinks and nginx config [@MickLesk](https://github.com/MickLesk) ([#13666](https://github.com/community-scripts/ProxmoxVE/pull/13666))
-    - Immich: Pin version to 2.7.4 [@vhsdream](https://github.com/vhsdream) ([#13661](https://github.com/community-scripts/ProxmoxVE/pull/13661))
+  - ddclient ([#12587](https://github.com/community-scripts/ProxmoxVE/pull/12587))
+- Netbird ([#12585](https://github.com/community-scripts/ProxmoxVE/pull/12585))
+- Papra ([#12577](https://github.com/community-scripts/ProxmoxVE/pull/12577))
 
-  - #### 🔧 Refactor
+### ?? Updated Scripts
 
-    - Crafty Controller: Wait for credentials file instead of fixed sleep [@MickLesk](https://github.com/MickLesk) ([#13670](https://github.com/community-scripts/ProxmoxVE/pull/13670))
-    - Refactor: Alpine-Wakapi [@tremor021](https://github.com/tremor021) ([#13656](https://github.com/community-scripts/ProxmoxVE/pull/13656))
+  - #### ?? Bug Fixes
 
-## 2026-04-10
+    - fluid-calendar: add build-essential to install and update dependencies [@Copilot](https://github.com/Copilot) ([#12602](https://github.com/community-scripts/ProxmoxVE/pull/12602))
+    - Refactor: BentoPDF [@vhsdream](https://github.com/vhsdream) ([#12597](https://github.com/community-scripts/ProxmoxVE/pull/12597))
+    - Tianji: Fix the bug introduced by the refactor [@tremor021](https://github.com/tremor021) ([#12564](https://github.com/community-scripts/ProxmoxVE/pull/12564))
+    - PowerDNS: use 'launch=' instead of 'launch+=' for gsqlite3 backend [@MickLesk](https://github.com/MickLesk) ([#12579](https://github.com/community-scripts/ProxmoxVE/pull/12579))
 
-### 🚀 Updated Scripts
+### ??? Deleted Scripts
 
-  - #### 🐞 Bug Fixes
+  - Suwayomi-Server: remove due to inactivity and very low usage [@MickLesk](https://github.com/MickLesk) ([#12596](https://github.com/community-scripts/ProxmoxVE/pull/12596))
 
-    - fix: ensure trailing newline in redis.conf before appending bind directive [@Copilot](https://github.com/Copilot) ([#13647](https://github.com/community-scripts/ProxmoxVE/pull/13647))
+### ?? Core
 
-  - #### ✨ New Features
+  - #### ?? Refactor
 
-    - Immich: Pin version to 2.7.3 [@vhsdream](https://github.com/vhsdream) ([#13631](https://github.com/community-scripts/ProxmoxVE/pull/13631))
-    - Homarr: bind Redis to localhost only [@MickLesk](https://github.com/MickLesk) ([#13552](https://github.com/community-scripts/ProxmoxVE/pull/13552))
+    - core: add var_os / var_version to whitelist for app.vars [@MickLesk](https://github.com/MickLesk) ([#12576](https://github.com/community-scripts/ProxmoxVE/pull/12576))
 
-### 💾 Core
+## 2026-03-04
 
-  - #### 🐞 Bug Fixes
+### ?? Updated Scripts
 
-    - tools.func: prevent script crash when entering GitHub token after rate limit [@MickLesk](https://github.com/MickLesk) ([#13638](https://github.com/community-scripts/ProxmoxVE/pull/13638))
+  - #### ?? Bug Fixes
 
-### 🧰 Tools
+    - fix: gitea-mirror [@CrazyWolf13](https://github.com/CrazyWolf13) ([#12549](https://github.com/community-scripts/ProxmoxVE/pull/12549))
+    - fix(immich): correct LibRaw clone URL to official upstream [@DenislavDenev](https://github.com/DenislavDenev) ([#12526](https://github.com/community-scripts/ProxmoxVE/pull/12526))
+    - update: stirling-pdf: java 25 [@CrazyWolf13](https://github.com/CrazyWolf13) ([#12552](https://github.com/community-scripts/ProxmoxVE/pull/12552))
+    - Docmost: register NoopAuditService globally when EE submodule is missing [@MickLesk](https://github.com/MickLesk) ([#12551](https://github.com/community-scripts/ProxmoxVE/pull/12551))
+    - jellyseer/overseer migration corrupting /usr/bin/update [@MickLesk](https://github.com/MickLesk) ([#12539](https://github.com/community-scripts/ProxmoxVE/pull/12539))
+    - PowerDNS: use gsqlite3 backend instead of BIND [@MickLesk](https://github.com/MickLesk) ([#12538](https://github.com/community-scripts/ProxmoxVE/pull/12538))
+    - addon migrations: /usr/bin/update replacement to prevent syntax error [@MickLesk](https://github.com/MickLesk) ([#12540](https://github.com/community-scripts/ProxmoxVE/pull/12540))
 
-  - #### 🔧 Refactor
+  - #### ?? Refactor
 
-    - addons: Filebrowser & Filebrowser-Quantum get warning if host install [@MickLesk](https://github.com/MickLesk) ([#13639](https://github.com/community-scripts/ProxmoxVE/pull/13639))
+    - Fluid-Calendar: NodeJS bump [@tremor021](https://github.com/tremor021) ([#12558](https://github.com/community-scripts/ProxmoxVE/pull/12558))
+    - Refactor: LiteLLM [@tremor021](https://github.com/tremor021) ([#12550](https://github.com/community-scripts/ProxmoxVE/pull/12550))
 
-## 2026-04-09
+### ?? Core
 
-### 🚀 Updated Scripts
+  - #### ?? Bug Fixes
 
-  - #### 🐞 Bug Fixes
+    - tools: fall back to distro packages for psql [@MickLesk](https://github.com/MickLesk) ([#12542](https://github.com/community-scripts/ProxmoxVE/pull/12542))
+    - fix: whitelist var_searchdomain and fix the handling of var_ns and va� [@tommoyer](https://github.com/tommoyer) ([#12521](https://github.com/community-scripts/ProxmoxVE/pull/12521))
 
-    - boostack: add: git [@CrazyWolf13](https://github.com/CrazyWolf13) ([#13620](https://github.com/community-scripts/ProxmoxVE/pull/13620))
+## 2026-03-03
 
-  - #### ✨ New Features
+### ?? New Scripts
 
-    - Update OPNsense version from 25.7 to 26.1 [@tdn131](https://github.com/tdn131) ([#13626](https://github.com/community-scripts/ProxmoxVE/pull/13626))
-    - CheckMK: Bump Default OS to 13 (trixie) + dynamic codename + fix RELEASE-Tag Fetching [@MickLesk](https://github.com/MickLesk) ([#13610](https://github.com/community-scripts/ProxmoxVE/pull/13610))
+  - Tinyauth: v5 Support & add Debian Version [@MickLesk](https://github.com/MickLesk) ([#12501](https://github.com/community-scripts/ProxmoxVE/pull/12501))
 
-## 2026-04-08
+### ?? Updated Scripts
 
-### 🆕 New Scripts
+  - #### ?? Bug Fixes
 
-  - IronClaw | Alpine-IronClaw ([#13591](https://github.com/community-scripts/ProxmoxVE/pull/13591))
+    - cross-seed: install build-essential to resolve missing `make` error [@Copilot](https://github.com/Copilot) ([#12522](https://github.com/community-scripts/ProxmoxVE/pull/12522))
+    - meshcentral: increased disk space to 4GB [@MickLesk](https://github.com/MickLesk) ([#12509](https://github.com/community-scripts/ProxmoxVE/pull/12509))
 
-### 🚀 Updated Scripts
+  - #### ?? Refactor
 
-  - #### 🐞 Bug Fixes
+    - opnsense-vm: harden temp dir, bridge detection and network selection [@MickLesk](https://github.com/MickLesk) ([#12513](https://github.com/community-scripts/ProxmoxVE/pull/12513))
 
-    - immich: disable upgrade-insecure-requests CSP directive [@MickLesk](https://github.com/MickLesk) ([#13600](https://github.com/community-scripts/ProxmoxVE/pull/13600))
-    - Immich: v2.7.2 [@vhsdream](https://github.com/vhsdream) ([#13579](https://github.com/community-scripts/ProxmoxVE/pull/13579))
-    - Update flaresolverr-install.sh [@maztheman](https://github.com/maztheman) ([#13584](https://github.com/community-scripts/ProxmoxVE/pull/13584))
+### ??? Deleted Scripts
 
-  - #### ✨ New Features
+  - Remove Unifi Network Server scripts (dead APT repo) [@Copilot](https://github.com/Copilot) ([#12500](https://github.com/community-scripts/ProxmoxVE/pull/12500))
 
-    - bambuddy: add mkdir before data restore & add ffmpeg dependency [@MickLesk](https://github.com/MickLesk) ([#13601](https://github.com/community-scripts/ProxmoxVE/pull/13601))
+### ?? Core
 
-  - #### 🔧 Refactor
+  - #### ? New Features
 
-    - feat: update UHF Server script to use setup_ffmpeg [@zackwithak13](https://github.com/zackwithak13) ([#13564](https://github.com/community-scripts/ProxmoxVE/pull/13564))
+    - core: recovery - add ENOSPC disk-full detection with auto-retry using * 2 hdd [@MickLesk](https://github.com/MickLesk) ([#12511](https://github.com/community-scripts/ProxmoxVE/pull/12511))
 
-### 💾 Core
+### ?? Documentation
 
-  - #### ✨ New Features
+  - Fix config_path casing in reactive-resume.json [@ScubyG](https://github.com/ScubyG) ([#12525](https://github.com/community-scripts/ProxmoxVE/pull/12525))
 
-    - core: add script page badges to descriptions | change donate URL [@MickLesk](https://github.com/MickLesk) ([#13596](https://github.com/community-scripts/ProxmoxVE/pull/13596))
+### ?? Website
 
-## 2026-04-07
+  - #### ?? Bug Fixes
 
-### 🗑️ Deleted Scripts
+    - Revert #11534 PR that messed up search [@BramSuurdje](https://github.com/BramSuurdje) ([#12492](https://github.com/community-scripts/ProxmoxVE/pull/12492))
 
-  - Remove low-install-count CT scripts and installers [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#13570](https://github.com/community-scripts/ProxmoxVE/pull/13570))
+## 2026-03-02
 
-### 💾 Core
+### ?? New Scripts
 
-  - #### ✨ New Features
+  - PowerDNS ([#12481](https://github.com/community-scripts/ProxmoxVE/pull/12481))
+- Profilarr ([#12441](https://github.com/community-scripts/ProxmoxVE/pull/12441))
 
-    - core: improve resilience for top Proxmox error codes (209, 215, 118, 206) [@MickLesk](https://github.com/MickLesk) ([#13575](https://github.com/community-scripts/ProxmoxVE/pull/13575))
+### ?? Updated Scripts
 
-## 2026-04-06
+  - #### ?? Bug Fixes
 
-### 🆕 New Scripts
+    - Tracearr: prepare for imminent v1.4.19 release [@durzo](https://github.com/durzo) ([#12413](https://github.com/community-scripts/ProxmoxVE/pull/12413))
 
-  - OpenThread Border Router ([#13536](https://github.com/community-scripts/ProxmoxVE/pull/13536))
-- Homelable ([#13539](https://github.com/community-scripts/ProxmoxVE/pull/13539))
+  - #### ? New Features
 
-### 🚀 Updated Scripts
+    - Frigate: Bump to v0.17 [@MickLesk](https://github.com/MickLesk) ([#12474](https://github.com/community-scripts/ProxmoxVE/pull/12474))
 
-  - #### 🐞 Bug Fixes
+  - #### ?? Breaking Changes
 
-    - Papra: check env before copy [@MickLesk](https://github.com/MickLesk) ([#13553](https://github.com/community-scripts/ProxmoxVE/pull/13553))
-    - changedetection: fix: typing_extensions error [@CrazyWolf13](https://github.com/CrazyWolf13) ([#13548](https://github.com/community-scripts/ProxmoxVE/pull/13548))
-    - kasm: fix: fetch latest version [@CrazyWolf13](https://github.com/CrazyWolf13) ([#13547](https://github.com/community-scripts/ProxmoxVE/pull/13547))
+    - Migrate: DokPloy, Komodo, Coolify, Dockge, Runtipi to Addons [@MickLesk](https://github.com/MickLesk) ([#12275](https://github.com/community-scripts/ProxmoxVE/pull/12275))
 
-## 2026-04-05
+  - #### ?? Refactor
 
-### 🚀 Updated Scripts
+    - ref: replace generic exit 1 with specific exit codes in ct & install [@MickLesk](https://github.com/MickLesk) ([#12475](https://github.com/community-scripts/ProxmoxVE/pull/12475))
 
-  - #### 🐞 Bug Fixes
+### ?? Core
 
-    - Grist: remove install:ee step (private repo, not needed for grist-core) [@MickLesk](https://github.com/MickLesk) ([#13526](https://github.com/community-scripts/ProxmoxVE/pull/13526))
-    - Nginx Proxy Manager: ensure /tmp/nginx/body exists via openresty service  [@MickLesk](https://github.com/MickLesk) ([#13528](https://github.com/community-scripts/ProxmoxVE/pull/13528))
-    - MotionEye: run as root to enable SMB share support [@MickLesk](https://github.com/MickLesk) ([#13527](https://github.com/community-scripts/ProxmoxVE/pull/13527))
+  - #### ? New Features
 
-### 💾 Core
+    - tools.func: Improve stability with retry logic, caching, and debug mode [@MickLesk](https://github.com/MickLesk) ([#10351](https://github.com/community-scripts/ProxmoxVE/pull/10351))
 
-  - #### 🔧 Refactor
+  - #### ?? Refactor
 
-    - core: silent() function - use return instead of exit to allow || true error handling [@MickLesk](https://github.com/MickLesk) ([#13529](https://github.com/community-scripts/ProxmoxVE/pull/13529))
+    - core: standardize exit codes and add mappings [@MickLesk](https://github.com/MickLesk) ([#12467](https://github.com/community-scripts/ProxmoxVE/pull/12467))
 
-## 2026-04-04
+### ?? Website
 
-### 🧰 Tools
+  - frontend: improve detail view badges, addon texts, and HTML title [@MickLesk](https://github.com/MickLesk) ([#12461](https://github.com/community-scripts/ProxmoxVE/pull/12461))
 
-  - #### 🐞 Bug Fixes
+## 2026-03-01
 
-    - komodo: set `PERIPHERY_CORE_PUBLIC_KEYS` to default value if absent [@4ndv](https://github.com/4ndv) ([#13519](https://github.com/community-scripts/ProxmoxVE/pull/13519))
+### ?? Updated Scripts
 
-## 2026-04-03
+  - #### ?? Bug Fixes
 
-### 🆕 New Scripts
+    - Sparkyfitness: use pnpm [@tomfrenzel](https://github.com/tomfrenzel) ([#12445](https://github.com/community-scripts/ProxmoxVE/pull/12445))
+    - OpenArchiver: Fix installation [@tremor021](https://github.com/tremor021) ([#12447](https://github.com/community-scripts/ProxmoxVE/pull/12447))
 
-  - netboot.xyz ([#13480](https://github.com/community-scripts/ProxmoxVE/pull/13480))
+## 2026-02-28
 
-### 🚀 Updated Scripts
+### ?? Updated Scripts
 
-  - #### 🐞 Bug Fixes
+  - Update Reactive Resume install script with useful .env information for reverse proxy setup [@Mazianni](https://github.com/Mazianni) ([#12401](https://github.com/community-scripts/ProxmoxVE/pull/12401))
 
-    - OpenWRT-VM: use poweroff instead of halt to properly stop VM [@MickLesk](https://github.com/MickLesk) ([#13504](https://github.com/community-scripts/ProxmoxVE/pull/13504))
-    - NginxProxyManager: fix openresty restart by setting user root before reload [@MickLesk](https://github.com/MickLesk) ([#13500](https://github.com/community-scripts/ProxmoxVE/pull/13500))
+  - #### ?? Bug Fixes
 
-  - #### ✨ New Features
+    - gramps-web: install addons (FilterRules) for relationship diagram [@MickLesk](https://github.com/MickLesk) ([#12387](https://github.com/community-scripts/ProxmoxVE/pull/12387))
+    - [Fix] Immich: Change `sed` command to fully replace line in postgresql.conf [@vhsdream](https://github.com/vhsdream) ([#12429](https://github.com/community-scripts/ProxmoxVE/pull/12429))
+    - [FIX] Immich: fix Openvino memory leak during OCR; improve HW-accelerated ML performance [@vhsdream](https://github.com/vhsdream) ([#12426](https://github.com/community-scripts/ProxmoxVE/pull/12426))
+    - Fix default tag for ioBroker LXC install [@josefglatz](https://github.com/josefglatz) ([#12423](https://github.com/community-scripts/ProxmoxVE/pull/12423))
+    - Ombi: Add database.json [@hraphael](https://github.com/hraphael) ([#12412](https://github.com/community-scripts/ProxmoxVE/pull/12412))
+    - Dawarich: add missing build deps and handle seed failure [@MickLesk](https://github.com/MickLesk) ([#12410](https://github.com/community-scripts/ProxmoxVE/pull/12410))
+    - pangolin: increase hdd to 10G [@MickLesk](https://github.com/MickLesk) ([#12409](https://github.com/community-scripts/ProxmoxVE/pull/12409))
 
-    - Crafty Controller: add Java 25 for Minecraft 1.26.1+ [@MickLesk](https://github.com/MickLesk) ([#13502](https://github.com/community-scripts/ProxmoxVE/pull/13502))
-    - Wealthfolio: update to v3.2.1 and Node.js 24 [@afadil](https://github.com/afadil) ([#13486](https://github.com/community-scripts/ProxmoxVE/pull/13486))
+  - #### ? New Features
 
-### 💾 Core
+    - BookLore: add additional JVM flags [@vhsdream](https://github.com/vhsdream) ([#12421](https://github.com/community-scripts/ProxmoxVE/pull/12421))
 
-  - #### 🐞 Bug Fixes
+### ??? Deleted Scripts
 
-    - core.func: prevent profile.d scripts from aborting on non-zero exit [@MickLesk](https://github.com/MickLesk) ([#13503](https://github.com/community-scripts/ProxmoxVE/pull/13503))
+  - Delete Palmr [@vhsdream](https://github.com/vhsdream) ([#12399](https://github.com/community-scripts/ProxmoxVE/pull/12399))
 
-  - #### ✨ New Features
+### ?? Core
 
-    - APT Proxy: Support full URLs (http/https with custom ports) [@MickLesk](https://github.com/MickLesk) ([#13474](https://github.com/community-scripts/ProxmoxVE/pull/13474))
+  - #### ?? Bug Fixes
 
-### 🧰 Tools
+    - core: read from /dev/tty in all interactive prompts | fix empty or cropped logs due build process [@MickLesk](https://github.com/MickLesk) ([#12406](https://github.com/community-scripts/ProxmoxVE/pull/12406))
 
-  - #### 🐞 Bug Fixes
+## 2026-02-27
 
-    - PVE LXC-Updater: pipe apt list through cat to prevent pager hang [@MickLesk](https://github.com/MickLesk) ([#13501](https://github.com/community-scripts/ProxmoxVE/pull/13501))
+### ?? New Scripts
 
-## 2026-04-02
+  - Strapi ([#12320](https://github.com/community-scripts/ProxmoxVE/pull/12320))
 
-### 🚀 Updated Scripts
+### ?? Updated Scripts
 
-  - #### 🐞 Bug Fixes
+  - #### ?? Bug Fixes
 
-    - Grist: Guard backup restore for empty docs/db files [@MickLesk](https://github.com/MickLesk) ([#13472](https://github.com/community-scripts/ProxmoxVE/pull/13472))
-    - fix(zigbee2mqtt): suppress grep error when pnpm-workspace.yaml is absent on update [@Copilot](https://github.com/Copilot) ([#13476](https://github.com/community-scripts/ProxmoxVE/pull/13476))
+    - TrueNAS VM: filter out new nightlies with MASTER [@juronja](https://github.com/juronja) ([#12355](https://github.com/community-scripts/ProxmoxVE/pull/12355))
 
-### 🧰 Tools
+### ?? Core
 
-  - #### 🐞 Bug Fixes
+  - #### ? New Features
 
-    - Cron LXC Updater: Add full PATH for cron environment [@MickLesk](https://github.com/MickLesk) ([#13473](https://github.com/community-scripts/ProxmoxVE/pull/13473))
+    - core: graceful fallback for apt-get update failures [@MickLesk](https://github.com/MickLesk) ([#12386](https://github.com/community-scripts/ProxmoxVE/pull/12386))
+    - core: Improve error outputs across core functions [@MickLesk](https://github.com/MickLesk) ([#12378](https://github.com/community-scripts/ProxmoxVE/pull/12378))
 
-## 2026-04-01
+## 2026-02-26
 
-### 🆕 New Scripts
+### ?? New Scripts
 
-  - DrawDB ([#13454](https://github.com/community-scripts/ProxmoxVE/pull/13454))
+  - Kima-Hub ([#12319](https://github.com/community-scripts/ProxmoxVE/pull/12319))
 
-### 🧰 Tools
+### ?? Updated Scripts
 
-  - #### 🐞 Bug Fixes
+  - #### ?? Bug Fixes
 
-    - Filebrowser: make noauth setup use correct database [@MickLesk](https://github.com/MickLesk) ([#13457](https://github.com/community-scripts/ProxmoxVE/pull/13457))
+    - tools.func: update glx alternatives / nvidia alternative if nvidia glx are missing [@MickLesk](https://github.com/MickLesk) ([#12372](https://github.com/community-scripts/ProxmoxVE/pull/12372))
+    - hotfix: overseer version [@CrazyWolf13](https://github.com/CrazyWolf13) ([#12366](https://github.com/community-scripts/ProxmoxVE/pull/12366))
 
-## 2026-03-31
+  - #### ? New Features
 
-### 🚀 Updated Scripts
+    - Add ffmpeg for booklore (ffprobe) [@MickLesk](https://github.com/MickLesk) ([#12371](https://github.com/community-scripts/ProxmoxVE/pull/12371))
+    - [QOL] Immich: add warning regarding library compilation time [@vhsdream](https://github.com/vhsdream) ([#12345](https://github.com/community-scripts/ProxmoxVE/pull/12345))
 
-  - #### 🐞 Bug Fixes
+### ?? Tools
 
-    - Graylog: set vm.max_map_count on host for OpenSearch [@MickLesk](https://github.com/MickLesk) ([#13441](https://github.com/community-scripts/ProxmoxVE/pull/13441))
-    - Koillection: ensure newline before appending to .env.local [@MickLesk](https://github.com/MickLesk) ([#13440](https://github.com/community-scripts/ProxmoxVE/pull/13440))
+  - #### ?? Bug Fixes
 
-### 💾 Core
+    - Improves adguardhome-sync addon when running on alpine LXCs [@Darkangeel-hd](https://github.com/Darkangeel-hd) ([#12362](https://github.com/community-scripts/ProxmoxVE/pull/12362))
 
-  - #### 🔧 Refactor
+  - #### ? New Features
 
-    - core: skip empty gateway value in network config [@MickLesk](https://github.com/MickLesk) ([#13442](https://github.com/community-scripts/ProxmoxVE/pull/13442))
+    - Add Alpine support and improve Tailscale install [@MickLesk](https://github.com/MickLesk) ([#12370](https://github.com/community-scripts/ProxmoxVE/pull/12370))
 
-## 2026-03-30
+### ?? Documentation
 
-### 🆕 New Scripts
+  - fix wrong link on contributions README.md [@Darkangeel-hd](https://github.com/Darkangeel-hd) ([#12363](https://github.com/community-scripts/ProxmoxVE/pull/12363))
 
-  - Bambuddy ([#13411](https://github.com/community-scripts/ProxmoxVE/pull/13411))
+### ?? Github
 
-### 🚀 Updated Scripts
+  - github: add workflow to autom. close unauthorized new-script PRs [@MickLesk](https://github.com/MickLesk) ([#12356](https://github.com/community-scripts/ProxmoxVE/pull/12356))
 
-  - #### 💥 Breaking Changes
+## 2026-02-25
 
-    - Rename: BirdNET > BirdNET-Go [@MickLesk](https://github.com/MickLesk) ([#13410](https://github.com/community-scripts/ProxmoxVE/pull/13410))
+### ?? New Scripts
 
-## 2026-03-29
+  - Zerobyte ([#12321](https://github.com/community-scripts/ProxmoxVE/pull/12321))
 
-### 🆕 New Scripts
+### ?? Updated Scripts
 
-  - YOURLS ([#13379](https://github.com/community-scripts/ProxmoxVE/pull/13379))
+  - #### ?? Bug Fixes
 
-### 🚀 Updated Scripts
+    - fix: overseer migration [@CrazyWolf13](https://github.com/CrazyWolf13) ([#12340](https://github.com/community-scripts/ProxmoxVE/pull/12340))
+    - add: vikunja: daemon reload [@CrazyWolf13](https://github.com/CrazyWolf13) ([#12323](https://github.com/community-scripts/ProxmoxVE/pull/12323))
+    - opnsense-VM: Use ip link to verify bridge existence [@MickLesk](https://github.com/MickLesk) ([#12329](https://github.com/community-scripts/ProxmoxVE/pull/12329))
+    - wger: Use $http_host for proxy Host header [@MickLesk](https://github.com/MickLesk) ([#12327](https://github.com/community-scripts/ProxmoxVE/pull/12327))
+    - Passbolt: Update Nginx config `client_max_body_size` [@tremor021](https://github.com/tremor021) ([#12313](https://github.com/community-scripts/ProxmoxVE/pull/12313))
+    - Zammad: configure Elasticsearch before zammad start [@MickLesk](https://github.com/MickLesk) ([#12308](https://github.com/community-scripts/ProxmoxVE/pull/12308))
 
-  - #### 🐞 Bug Fixes
+  - #### ?? Refactor
 
-    - fix(victoriametrics): use jq to filter releases [@Joery-M](https://github.com/Joery-M) ([#13393](https://github.com/community-scripts/ProxmoxVE/pull/13393))
-    - Ollama: add error handling for Intel GPG key imports [@MickLesk](https://github.com/MickLesk) ([#13397](https://github.com/community-scripts/ProxmoxVE/pull/13397))
-    - Immich: ignore Redis connection error on maintenance mode disable [@MickLesk](https://github.com/MickLesk) ([#13398](https://github.com/community-scripts/ProxmoxVE/pull/13398))
-    - NPM: unmask openresty after migration from package [@MickLesk](https://github.com/MickLesk) ([#13399](https://github.com/community-scripts/ProxmoxVE/pull/13399))
+    - OpenProject: Various fixes [@tremor021](https://github.com/tremor021) ([#12246](https://github.com/community-scripts/ProxmoxVE/pull/12246))
 
-## 2026-03-28
+### ?? Core
 
-### 🚀 Updated Scripts
+  - #### ?? Bug Fixes
 
-  - #### 🐞 Bug Fixes
+    - Fix detection of ssh keys [@1-tempest](https://github.com/1-tempest) ([#12230](https://github.com/community-scripts/ProxmoxVE/pull/12230))
 
-    - Fix: Update gokapi binary name for v2.2.4+ and add migration step [@krazos](https://github.com/krazos) ([#13377](https://github.com/community-scripts/ProxmoxVE/pull/13377))
-    - Fix: update gokapi asset matching for v2.2.4+ naming convention [@krazos](https://github.com/krazos) ([#13369](https://github.com/community-scripts/ProxmoxVE/pull/13369))
-    - Tandoor Recipes: Add missing env variable [@tremor021](https://github.com/tremor021) ([#13365](https://github.com/community-scripts/ProxmoxVE/pull/13365))
+  - #### ? New Features
 
-  - #### ✨ New Features
+    - tools.func: Improve GitHub/Codeberg API error handling and error output [@MickLesk](https://github.com/MickLesk) ([#12330](https://github.com/community-scripts/ProxmoxVE/pull/12330))
 
-    - FileFlows: add option to install Node [@tremor021](https://github.com/tremor021) ([#13368](https://github.com/community-scripts/ProxmoxVE/pull/13368))
+  - #### ?? Refactor
 
-## 2026-03-27
+    - core: remove duplicate traps, consolidate error handling and harden signal traps [@MickLesk](https://github.com/MickLesk) ([#12316](https://github.com/community-scripts/ProxmoxVE/pull/12316))
 
-### 🆕 New Scripts
+### ?? Github
 
-  - Matter-Server ([#13355](https://github.com/community-scripts/ProxmoxVE/pull/13355))
-- GeoPulse ([#13320](https://github.com/community-scripts/ProxmoxVE/pull/13320))
+  - github: improvements for node drift wf [@MickLesk](https://github.com/MickLesk) ([#12309](https://github.com/community-scripts/ProxmoxVE/pull/12309))
 
-### 🚀 Updated Scripts
+## 2026-02-24
 
-  - #### 🐞 Bug Fixes
+### ?? Updated Scripts
 
-    - RevealJS: Switch from gulp to vite [@tremor021](https://github.com/tremor021) ([#13336](https://github.com/community-scripts/ProxmoxVE/pull/13336))
+  - several scripts: add additional github link in source [@MickLesk](https://github.com/MickLesk) ([#12282](https://github.com/community-scripts/ProxmoxVE/pull/12282))
+- adds further documentation during the installation script. [@d12rio](https://github.com/d12rio) ([#12248](https://github.com/community-scripts/ProxmoxVE/pull/12248))
 
-  - #### ✨ New Features
+  - #### ?? Bug Fixes
 
-    - Dispatcharr add custom Postgres port support for upgrade [@MickLesk](https://github.com/MickLesk) ([#13347](https://github.com/community-scripts/ProxmoxVE/pull/13347))
-    - Immich: bump to v2.6.3 [@MickLesk](https://github.com/MickLesk) ([#13324](https://github.com/community-scripts/ProxmoxVE/pull/13324))
+    - [Fix] PatchMon: remove VITE_API_URL from frontend env [@vhsdream](https://github.com/vhsdream) ([#12294](https://github.com/community-scripts/ProxmoxVE/pull/12294))
+    - fix(searxng): remove orphaned fi causing syntax error [@mark-jeffrey](https://github.com/mark-jeffrey) ([#12283](https://github.com/community-scripts/ProxmoxVE/pull/12283))
+    - Refactor n8n [@MickLesk](https://github.com/MickLesk) ([#12264](https://github.com/community-scripts/ProxmoxVE/pull/12264))
+    - Firefly: PHP bump [@tremor021](https://github.com/tremor021) ([#12247](https://github.com/community-scripts/ProxmoxVE/pull/12247))
 
-### 🧰 Tools
+  - #### ? New Features
 
-  - #### ✨ New Features
+    - Databasus: add mariadb path for mysql/mariadb backups | add mongodb database tools [@MickLesk](https://github.com/MickLesk) ([#12259](https://github.com/community-scripts/ProxmoxVE/pull/12259))
+    - make searxng updateable [@shtefko](https://github.com/shtefko) ([#12207](https://github.com/community-scripts/ProxmoxVE/pull/12207))
 
-    - Refactor/Feature-Bump/Security: Update-Cron-LXCs (Now Local Mode!) [@MickLesk](https://github.com/MickLesk) ([#13339](https://github.com/community-scripts/ProxmoxVE/pull/13339))
+  - #### ?? Breaking Changes
 
-## 2026-03-26
+    - fix: wealthfolio for v3 [@CrazyWolf13](https://github.com/CrazyWolf13) ([#11765](https://github.com/community-scripts/ProxmoxVE/pull/11765))
 
-### 🆕 New Scripts
+  - #### ?? Refactor
 
-  - BirdNET ([#13313](https://github.com/community-scripts/ProxmoxVE/pull/13313))
+    - bump various scripts from Node 22 to 24 [@MickLesk](https://github.com/MickLesk) ([#12265](https://github.com/community-scripts/ProxmoxVE/pull/12265))
 
-### 🚀 Updated Scripts
+### ?? Core
 
-  - #### 🐞 Bug Fixes
+  - #### ?? Bug Fixes
 
-    - Immich: Bump to 2.6.2 | use start.sh in service, ensure DB_HOSTNAME in .env | Fix Rights Issue with ZFS Shares [@MickLesk](https://github.com/MickLesk) ([#13199](https://github.com/community-scripts/ProxmoxVE/pull/13199))
+    - core: fix broken "command not found" after err_trap [@MickLesk](https://github.com/MickLesk) ([#12280](https://github.com/community-scripts/ProxmoxVE/pull/12280))
 
-  - #### ✨ New Features
+  - #### ? New Features
 
-    - SparkyFitness: add garmin microservice as addon [@tomfrenzel](https://github.com/tomfrenzel) ([#12642](https://github.com/community-scripts/ProxmoxVE/pull/12642))
-    - Frigate: bump to v0.17.1 & change build order [@MickLesk](https://github.com/MickLesk) ([#13304](https://github.com/community-scripts/ProxmoxVE/pull/13304))
+    - tools.func: add get_latest_gh_tag helper function [@MickLesk](https://github.com/MickLesk) ([#12261](https://github.com/community-scripts/ProxmoxVE/pull/12261))
 
-### 💾 Core
+### ?? Tools
 
-  - #### 🐞 Bug Fixes
+  - Arcane ([#12263](https://github.com/community-scripts/ProxmoxVE/pull/12263))
 
-    - tools.func: pin npm to 11.11.0 to work around Node.js 22.22.2 regression [@MickLesk](https://github.com/MickLesk) ([#13296](https://github.com/community-scripts/ProxmoxVE/pull/13296))
+### ?? Github
 
-  - #### ✨ New Features
+  - github: add weekly Node.js version drift check workflow [@MickLesk](https://github.com/MickLesk) ([#12267](https://github.com/community-scripts/ProxmoxVE/pull/12267))
+- add: workflow to close stale PRs [@CrazyWolf13](https://github.com/CrazyWolf13) ([#12243](https://github.com/community-scripts/ProxmoxVE/pull/12243))
 
-    - core: APT/APK Mirror Fallback for CDN Failures [@MickLesk](https://github.com/MickLesk) ([#13316](https://github.com/community-scripts/ProxmoxVE/pull/13316))
-    - core/tools: replace generic return 1 exit_codes with more specific exit_codes [@MickLesk](https://github.com/MickLesk) ([#13311](https://github.com/community-scripts/ProxmoxVE/pull/13311))
+## 2026-02-23
 
-  - #### 🔧 Refactor
+### ?? New Scripts
 
-    - core: use /usr/bin/install to prevent function shadowing [@MickLesk](https://github.com/MickLesk) ([#13299](https://github.com/community-scripts/ProxmoxVE/pull/13299))
+  - SeaweedFS ([#12220](https://github.com/community-scripts/ProxmoxVE/pull/12220))
+- Sonobarr ([#12221](https://github.com/community-scripts/ProxmoxVE/pull/12221))
+- SparkyFitness ([#12185](https://github.com/community-scripts/ProxmoxVE/pull/12185))
+- Frigate v16.4 [@MickLesk](https://github.com/MickLesk) ([#11887](https://github.com/community-scripts/ProxmoxVE/pull/11887))
 
-### 🧰 Tools
+### ?? Updated Scripts
 
-  - #### 🐞 Bug Fixes
+  - #### ? New Features
 
-    - SparkyFitness-Garmin: fix app name [@tomfrenzel](https://github.com/tomfrenzel) ([#13325](https://github.com/community-scripts/ProxmoxVE/pull/13325))
+    - memos: unpin version due new release artifacts [@MickLesk](https://github.com/MickLesk) ([#12224](https://github.com/community-scripts/ProxmoxVE/pull/12224))
+    - core: Enhance signal handling, reported "status" and logs [@MickLesk](https://github.com/MickLesk) ([#12216](https://github.com/community-scripts/ProxmoxVE/pull/12216))
 
-## 2026-03-25
+  - #### ?? Refactor
 
-### 🚀 Updated Scripts
+    - booklore v2: embed frontend, bump Java to 25, remove nginx [@MickLesk](https://github.com/MickLesk) ([#12223](https://github.com/community-scripts/ProxmoxVE/pull/12223))
 
-  - #### ✨ New Features
+### ??? Deleted Scripts
 
-    - Komodo v2: migrate env vars to v2 and update source [@MickLesk](https://github.com/MickLesk) ([#13262](https://github.com/community-scripts/ProxmoxVE/pull/13262))
+  - Remove: Huntarr (deprecated & Security) [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#12226](https://github.com/community-scripts/ProxmoxVE/pull/12226))
 
-### 💾 Core
+### ?? Core
 
-  - #### 🔧 Refactor
+  - #### ?? Refactor
 
-    - core: make shell command substitutions safe with || true [@MickLesk](https://github.com/MickLesk) ([#13279](https://github.com/community-scripts/ProxmoxVE/pull/13279))
+    - core: Improve error handling and logging for LXC builds [@MickLesk](https://github.com/MickLesk) ([#12208](https://github.com/community-scripts/ProxmoxVE/pull/12208))
 
-## 2026-03-24
+### ?? Website
 
-### 🆕 New Scripts
+  - #### ?? Bug Fixes
 
-  - Homebrew (Addon) ([#13249](https://github.com/community-scripts/ProxmoxVE/pull/13249))
-- NextExplorer ([#13252](https://github.com/community-scripts/ProxmoxVE/pull/13252))
+    - calibre-web: update default credentials [@LaevaertK](https://github.com/LaevaertK) ([#12201](https://github.com/community-scripts/ProxmoxVE/pull/12201))
 
-### 🚀 Updated Scripts
+  - #### ?? Script Information
 
-  - #### ✨ New Features
+    - chore: update Frigate documentation and website URLs [@JohnICB](https://github.com/JohnICB) ([#12218](https://github.com/community-scripts/ProxmoxVE/pull/12218))
 
-    - Turnkey: modernize turnkey.sh with shared libraries  [@MickLesk](https://github.com/MickLesk) ([#13242](https://github.com/community-scripts/ProxmoxVE/pull/13242))
+## 2026-02-22
 
-  - #### 🔧 Refactor
+### ?? New Scripts
 
-    - chore: replace helper-scripts.com with community-scripts.com [@MickLesk](https://github.com/MickLesk) ([#13244](https://github.com/community-scripts/ProxmoxVE/pull/13244))
+  - Gramps-Web ([#12157](https://github.com/community-scripts/ProxmoxVE/pull/12157))
 
-### 🗑️ Deleted Scripts
+### ?? Updated Scripts
 
-  - Remove: Booklore [@MickLesk](https://github.com/MickLesk) ([#13265](https://github.com/community-scripts/ProxmoxVE/pull/13265))
+  - #### ?? Bug Fixes
 
-## 2026-03-23
+    - fix: Apache Guacamole - bump to Temurin JDK 17 to resolve Debian 13 (Trixie) install failure [@Copilot](https://github.com/Copilot) ([#12161](https://github.com/community-scripts/ProxmoxVE/pull/12161))
+    - Docker-VM: add error handling for virt-customize finalization [@MickLesk](https://github.com/MickLesk) ([#12127](https://github.com/community-scripts/ProxmoxVE/pull/12127))
+    - [Fix] Sure: add Sidekiq service [@vhsdream](https://github.com/vhsdream) ([#12186](https://github.com/community-scripts/ProxmoxVE/pull/12186))
 
-### 🚀 Updated Scripts
+  - #### ? New Features
 
-  - #### 🔧 Refactor
+    - Refactor & Bump to v2: Plex [@MickLesk](https://github.com/MickLesk) ([#12179](https://github.com/community-scripts/ProxmoxVE/pull/12179))
 
-    - core: harden shell scripts against injection and insecure permissions [@MickLesk](https://github.com/MickLesk) ([#13239](https://github.com/community-scripts/ProxmoxVE/pull/13239))
+  - #### ?? Refactor
 
-## 2026-03-22
+    - karakeep: bump to node 24 [@CrazyWolf13](https://github.com/CrazyWolf13) ([#12183](https://github.com/community-scripts/ProxmoxVE/pull/12183))
 
-### 🆕 New Scripts
+### ?? Core
 
-  - versitygw ([#13180](https://github.com/community-scripts/ProxmoxVE/pull/13180))
+  - #### ? New Features
 
-### 🚀 Updated Scripts
+    - tools.func: add GitHub API rate-limit detection and GITHUB_TOKEN support [@MickLesk](https://github.com/MickLesk) ([#12176](https://github.com/community-scripts/ProxmoxVE/pull/12176))
 
-  - #### 🐞 Bug Fixes
+### ?? Tools
 
-    - Adventurelog: pin DRF <3.15 to fix coreapi module removal [@MickLesk](https://github.com/MickLesk) ([#13194](https://github.com/community-scripts/ProxmoxVE/pull/13194))
+  - CR*NMASTER ([#12065](https://github.com/community-scripts/ProxmoxVE/pull/12065))
 
-  - #### ✨ New Features
+  - #### ?? Refactor
 
-    - ConvertX: add libreoffice-writer for ODT/document conversions [@MickLesk](https://github.com/MickLesk) ([#13196](https://github.com/community-scripts/ProxmoxVE/pull/13196))
+    - Update package management commands in clean-lxcs.sh [@heinemannj](https://github.com/heinemannj) ([#12166](https://github.com/community-scripts/ProxmoxVE/pull/12166))
 
-  - #### 🔧 Refactor
+### ? Uncategorized
 
-    - iSponsorblockTV: add AVX CPU check before installation [@MickLesk](https://github.com/MickLesk) ([#13197](https://github.com/community-scripts/ProxmoxVE/pull/13197))
+  - calibre-web: Update logo URL [@MickLesk](https://github.com/MickLesk) ([#12178](https://github.com/community-scripts/ProxmoxVE/pull/12178))
 
-### 💾 Core
+## 2026-02-21
 
-  - #### 🐞 Bug Fixes
+### ?? Updated Scripts
 
-    - core: guard against empty IPv6 address in static mode [@MickLesk](https://github.com/MickLesk) ([#13195](https://github.com/community-scripts/ProxmoxVE/pull/13195))
+  - #### ?? Bug Fixes
 
-## 2026-03-21
+    - Pangolin: restore config before db migration, use drizzle-kit push [@MickLesk](https://github.com/MickLesk) ([#12130](https://github.com/community-scripts/ProxmoxVE/pull/12130))
+    - PLANKA: fix msg's [@danielalanbates](https://github.com/danielalanbates) ([#12143](https://github.com/community-scripts/ProxmoxVE/pull/12143))
 
-### 🚀 Updated Scripts
+### ?? Website
 
-  - #### 🐞 Bug Fixes
+  - #### ?? Script Information
 
-    - Anytype-server: wait for MongoDB readiness before rs.initiate() [@MickLesk](https://github.com/MickLesk) ([#13165](https://github.com/community-scripts/ProxmoxVE/pull/13165))
-    - Frigate: use correct CPU model fallback path [@MickLesk](https://github.com/MickLesk) ([#13164](https://github.com/community-scripts/ProxmoxVE/pull/13164))
-    - iSponsorBlockTV: Fix release fetching  [@tremor021](https://github.com/tremor021) ([#13157](https://github.com/community-scripts/ProxmoxVE/pull/13157))
-    - Isponsorblocktv: use quoted heredoc to prevent unbound variable error during CLI wrapper creation [@Copilot](https://github.com/Copilot) ([#13146](https://github.com/community-scripts/ProxmoxVE/pull/13146))
+    - MediaManager: Update documentation URL [@tremor021](https://github.com/tremor021) ([#12154](https://github.com/community-scripts/ProxmoxVE/pull/12154))
 
-  - #### ✨ New Features
+## 2026-02-20
 
-    - Headscale: Enable TUN [@tremor021](https://github.com/tremor021) ([#13158](https://github.com/community-scripts/ProxmoxVE/pull/13158))
+### ?? New Scripts
 
-### 💾 Core
+  - Sure ([#12114](https://github.com/community-scripts/ProxmoxVE/pull/12114))
+- Calibre-Web ([#12115](https://github.com/community-scripts/ProxmoxVE/pull/12115))
 
-  - #### 🐞 Bug Fixes
+### ?? Updated Scripts
 
-    - core: add missing -searchdomain/-nameserver prefix in base_settings [@MickLesk](https://github.com/MickLesk) ([#13166](https://github.com/community-scripts/ProxmoxVE/pull/13166))
+  - #### ?? Bug Fixes
 
-## 2026-03-20
+    - Zammad: fix Elasticsearch JVM config and add daemon-reload [@MickLesk](https://github.com/MickLesk) ([#12125](https://github.com/community-scripts/ProxmoxVE/pull/12125))
+    - Huntarr: add build-essential for native pip dependencies [@MickLesk](https://github.com/MickLesk) ([#12126](https://github.com/community-scripts/ProxmoxVE/pull/12126))
+    - Dokploy: fix update function [@vhsdream](https://github.com/vhsdream) ([#12116](https://github.com/community-scripts/ProxmoxVE/pull/12116))
 
-### 🆕 New Scripts
+  - #### ?? Breaking Changes
 
-  - iSponsorBlockTV ([#13123](https://github.com/community-scripts/ProxmoxVE/pull/13123))
-- Alpine-Wakapi ([#13119](https://github.com/community-scripts/ProxmoxVE/pull/13119))
-- teleport ([#13086](https://github.com/community-scripts/ProxmoxVE/pull/13086))
+    - recyclarr: adjust paths for v8.0 breaking changes [@MickLesk](https://github.com/MickLesk) ([#12129](https://github.com/community-scripts/ProxmoxVE/pull/12129))
 
-### 🚀 Updated Scripts
+  - #### ?? Refactor
 
-  - #### 🐞 Bug Fixes
+    - Planka: migrate data paths to new v2 directory structure [@MickLesk](https://github.com/MickLesk) ([#12128](https://github.com/community-scripts/ProxmoxVE/pull/12128))
 
-    - Reactive-Resume: add git dependency for v5.0.13+ [@MickLesk](https://github.com/MickLesk) ([#13133](https://github.com/community-scripts/ProxmoxVE/pull/13133))
-    - Scanopy: increase default CPU, RAM, and HDD to prevent OOM during Rust build [@Copilot](https://github.com/Copilot) ([#13130](https://github.com/community-scripts/ProxmoxVE/pull/13130))
+### ?? Website
 
-  - #### ✨ New Features
+  - #### ?? Script Information
 
-    - Immich: v2.6.1 [@vhsdream](https://github.com/vhsdream) ([#13111](https://github.com/community-scripts/ProxmoxVE/pull/13111))
-    - VM's: add input validation and hostname sanitization to all VM scripts [@MickLesk](https://github.com/MickLesk) ([#12973](https://github.com/community-scripts/ProxmoxVE/pull/12973))
+    - fixen broken link to dawarich documentation [@RiX012](https://github.com/RiX012) ([#12103](https://github.com/community-scripts/ProxmoxVE/pull/12103))
 
-### 🧰 Tools
+## 2026-02-19
 
-  - #### 🔧 Refactor
+### ?? New Scripts
 
-    - Harden code-server addon install script [@MickLesk](https://github.com/MickLesk) ([#13116](https://github.com/community-scripts/ProxmoxVE/pull/13116))
+  - TrueNAS-VM ([#12059](https://github.com/community-scripts/ProxmoxVE/pull/12059))
 
-## 2026-03-19
+### ?? Updated Scripts
 
-### 🚀 Updated Scripts
+  - #### ?? Bug Fixes
 
-  - Owncast: increase default disk size from 2GB to 10GB [@Copilot](https://github.com/Copilot) ([#13079](https://github.com/community-scripts/ProxmoxVE/pull/13079))
+    - add: patchmon breaking change msg [@CrazyWolf13](https://github.com/CrazyWolf13) ([#12075](https://github.com/community-scripts/ProxmoxVE/pull/12075))
+    - LibreNMS: Various fixes [@tremor021](https://github.com/tremor021) ([#12089](https://github.com/community-scripts/ProxmoxVE/pull/12089))
 
-  - #### 🐞 Bug Fixes
+### ?? Website
 
-    - fix: remove extra backslash to match single quoted here-doc [@Zelnes](https://github.com/Zelnes) ([#13108](https://github.com/community-scripts/ProxmoxVE/pull/13108))
-    - Reactive-Resume: Upgrade Node to 24 and enable Corepack [@MickLesk](https://github.com/MickLesk) ([#13093](https://github.com/community-scripts/ProxmoxVE/pull/13093))
-    - Increase Tracearr RAM; derive APP_VERSION [@MickLesk](https://github.com/MickLesk) ([#13087](https://github.com/community-scripts/ProxmoxVE/pull/13087))
-    - ProjectSend: Update application access URL [@tremor021](https://github.com/tremor021) ([#13078](https://github.com/community-scripts/ProxmoxVE/pull/13078))
-    - Dispatcharr: use npm install --no-audit --progress=false [@MickLesk](https://github.com/MickLesk) ([#13074](https://github.com/community-scripts/ProxmoxVE/pull/13074))
-    - core: reorder hwaccel setup and adjust GPU group usermod [@MickLesk](https://github.com/MickLesk) ([#13072](https://github.com/community-scripts/ProxmoxVE/pull/13072))
+  - #### ?? Script Information
 
-  - #### ✨ New Features
+    - truenas-vm: slug fix for source code link [@juronja](https://github.com/juronja) ([#12088](https://github.com/community-scripts/ProxmoxVE/pull/12088))
 
-    - tools.func: display pin reason in release-check messages [@MickLesk](https://github.com/MickLesk) ([#13095](https://github.com/community-scripts/ProxmoxVE/pull/13095))
-    - NocoDB: Unpin Version to latest [@MickLesk](https://github.com/MickLesk) ([#13094](https://github.com/community-scripts/ProxmoxVE/pull/13094))
+## 2026-02-18
 
-### 💾 Core
+### ?? Updated Scripts
 
-  - #### 🐞 Bug Fixes
+  - #### ?? Breaking Changes
 
-    - tools.func: use dpkg-query for reliable JDK version detection [@MickLesk](https://github.com/MickLesk) ([#13101](https://github.com/community-scripts/ProxmoxVE/pull/13101))
+    - [Fix] PatchMon: use `SERVER_PORT` in Nginx config if set in env [@vhsdream](https://github.com/vhsdream) ([#12053](https://github.com/community-scripts/ProxmoxVE/pull/12053))
 
-### 📚 Documentation
+### ?? Core
 
-  - Update link from helper-scripts.com to community-scripts.org [@adnanvaldes](https://github.com/adnanvaldes) ([#13098](https://github.com/community-scripts/ProxmoxVE/pull/13098))
-- github: add PocketBase bot workflow [@MickLesk](https://github.com/MickLesk) ([#13075](https://github.com/community-scripts/ProxmoxVE/pull/13075))
+  - #### ? New Features
 
-## 2026-03-18
+    - core: Execution ID & Telemetry Improvements [@MickLesk](https://github.com/MickLesk) ([#12041](https://github.com/community-scripts/ProxmoxVE/pull/12041))
 
-### 🆕 New Scripts
+## 2026-02-17
 
-  - Alpine-Ntfy [@MickLesk](https://github.com/MickLesk) ([#13048](https://github.com/community-scripts/ProxmoxVE/pull/13048))
-- Split-Pro ([#12975](https://github.com/community-scripts/ProxmoxVE/pull/12975))
+### ?? New Scripts
 
-### 🚀 Updated Scripts
+  - Databasus ([#12018](https://github.com/community-scripts/ProxmoxVE/pull/12018))
 
-  - #### 🐞 Bug Fixes
+### ?? Updated Scripts
 
-    - Tdarr: use curl_with_retry and correct exit code [@MickLesk](https://github.com/MickLesk) ([#13060](https://github.com/community-scripts/ProxmoxVE/pull/13060))
-    - reitti: fix: v4 [@CrazyWolf13](https://github.com/CrazyWolf13) ([#13039](https://github.com/community-scripts/ProxmoxVE/pull/13039))
-    - Paperless-NGX: increase default RAM to 3GB [@MickLesk](https://github.com/MickLesk) ([#13018](https://github.com/community-scripts/ProxmoxVE/pull/13018))
-    - Plex: restart service after update to apply new version [@MickLesk](https://github.com/MickLesk) ([#13017](https://github.com/community-scripts/ProxmoxVE/pull/13017))
+  - #### ?? Bug Fixes
 
-  - #### ✨ New Features
+    - [Hotfix] Cleanuparr: backup config before update [@vhsdream](https://github.com/vhsdream) ([#12039](https://github.com/community-scripts/ProxmoxVE/pull/12039))
+    - fix: pterodactyl-panel add symlink [@CrazyWolf13](https://github.com/CrazyWolf13) ([#11997](https://github.com/community-scripts/ProxmoxVE/pull/11997))
 
-    - tools: centralize GPU group setup via setup_hwaccel [@MickLesk](https://github.com/MickLesk) ([#13044](https://github.com/community-scripts/ProxmoxVE/pull/13044))
-    - Termix: add guacd build and systemd integration [@MickLesk](https://github.com/MickLesk) ([#12999](https://github.com/community-scripts/ProxmoxVE/pull/12999))
+### ?? Core
 
-  - #### 🔧 Refactor
+  - #### ?? Bug Fixes
 
-    - Podman: replace deprecated commands with Quadlets [@MickLesk](https://github.com/MickLesk) ([#13052](https://github.com/community-scripts/ProxmoxVE/pull/13052))
-    - Refactor: Jellyfin repo, ffmpeg package and symlinks [@MickLesk](https://github.com/MickLesk) ([#13045](https://github.com/community-scripts/ProxmoxVE/pull/13045))
-    - pve-scripts-local: Increase default disk size from 4GB to 10GB [@MickLesk](https://github.com/MickLesk) ([#13009](https://github.com/community-scripts/ProxmoxVE/pull/13009))
+    - core: call get_lxc_ip in start() before updates [@MickLesk](https://github.com/MickLesk) ([#12015](https://github.com/community-scripts/ProxmoxVE/pull/12015))
 
-### 💾 Core
+  - #### ? New Features
 
-  - #### ✨ New Features
+    - tools/pve: add data analytics / formatting / linting [@MickLesk](https://github.com/MickLesk) ([#12034](https://github.com/community-scripts/ProxmoxVE/pull/12034))
+    - core: smart recovery for failed installs | extend exit_codes  [@MickLesk](https://github.com/MickLesk) ([#11221](https://github.com/community-scripts/ProxmoxVE/pull/11221))
 
-    - tools.func Implement pg_cron setup for setup_postgresql [@MickLesk](https://github.com/MickLesk) ([#13053](https://github.com/community-scripts/ProxmoxVE/pull/13053))
-    - tools.func: Implement check_for_gh_tag function [@MickLesk](https://github.com/MickLesk) ([#12998](https://github.com/community-scripts/ProxmoxVE/pull/12998))
-    - tools.func: Implement fetch_and_deploy_gh_tag function [@MickLesk](https://github.com/MickLesk) ([#13000](https://github.com/community-scripts/ProxmoxVE/pull/13000))
+  - #### ?? Refactor
 
-## 2026-03-17
+    - core: error-handler improvements | better exit_code handling | better tools.func source check [@MickLesk](https://github.com/MickLesk) ([#12019](https://github.com/community-scripts/ProxmoxVE/pull/12019))
 
-### 🚀 Updated Scripts
+### ?? Tools
 
-  - #### 🐞 Bug Fixes
+  - #### ?? Refactor
 
-    - Gluetun: add OpenVPN process user and cleanup stale config [@MickLesk](https://github.com/MickLesk) ([#13016](https://github.com/community-scripts/ProxmoxVE/pull/13016))
-    - Frigate: check OpenVino model files exist before configuring detector and use curl_with_retry instead of default wget [@MickLesk](https://github.com/MickLesk) ([#13019](https://github.com/community-scripts/ProxmoxVE/pull/13019))
+    - Immich Public Proxy: centralize and fix systemd service creation [@MickLesk](https://github.com/MickLesk) ([#12025](https://github.com/community-scripts/ProxmoxVE/pull/12025))
 
-### 💾 Core
+### ?? Documentation
 
-  - #### 🔧 Refactor
+  - fix contribution/setup-fork [@andreasabeck](https://github.com/andreasabeck) ([#12047](https://github.com/community-scripts/ProxmoxVE/pull/12047))
 
-    - tools.func: Update `create_self_signed_cert()` [@tremor021](https://github.com/tremor021) ([#13008](https://github.com/community-scripts/ProxmoxVE/pull/13008))
+## 2026-02-16
 
-## 2026-03-16
+### ?? New Scripts
 
-### 🆕 New Scripts
+  - RomM ([#11987](https://github.com/community-scripts/ProxmoxVE/pull/11987))
+- LinkDing ([#11976](https://github.com/community-scripts/ProxmoxVE/pull/11976))
 
-  - Gluetun ([#12976](https://github.com/community-scripts/ProxmoxVE/pull/12976))
-- Anytype-Server ([#12974](https://github.com/community-scripts/ProxmoxVE/pull/12974))
+### ?? Updated Scripts
 
-### 🚀 Updated Scripts
+  - Opencloud: Pin version to 5.1.0 [@vhsdream](https://github.com/vhsdream) ([#12004](https://github.com/community-scripts/ProxmoxVE/pull/12004))
 
-  - #### 🐞 Bug Fixes
+  - #### ?? Bug Fixes
 
-    - Immich: use gcc-13 for compilation & add uv python pre-install with retry logic [@MickLesk](https://github.com/MickLesk) ([#12935](https://github.com/community-scripts/ProxmoxVE/pull/12935))
-    - Tautulli: add setuptools<81 constraint to update script [@MickLesk](https://github.com/MickLesk) ([#12959](https://github.com/community-scripts/ProxmoxVE/pull/12959))
-    - Seerr: add missing build deps [@MickLesk](https://github.com/MickLesk) ([#12960](https://github.com/community-scripts/ProxmoxVE/pull/12960))
-    - fix: yubal update [@CrazyWolf13](https://github.com/CrazyWolf13) ([#12961](https://github.com/community-scripts/ProxmoxVE/pull/12961))
+    - Tududi: Fix sed command for DB_FILE configuration [@tremor021](https://github.com/tremor021) ([#11988](https://github.com/community-scripts/ProxmoxVE/pull/11988))
+    - slskd: fix exit position [@MickLesk](https://github.com/MickLesk) ([#11963](https://github.com/community-scripts/ProxmoxVE/pull/11963))
+    - cryptpad: restore config earlier and run onlyoffice upgrade [@MickLesk](https://github.com/MickLesk) ([#11964](https://github.com/community-scripts/ProxmoxVE/pull/11964))
+    - jellyseerr/overseerr: Migrate update script to Seerr; prompt rerun [@MickLesk](https://github.com/MickLesk) ([#11965](https://github.com/community-scripts/ProxmoxVE/pull/11965))
 
-### 💾 Core
+  - #### ?? Refactor
 
-  - #### 🐞 Bug Fixes
+    - core/vm's: ensure script state is sent on script exit  [@MickLesk](https://github.com/MickLesk) ([#11991](https://github.com/community-scripts/ProxmoxVE/pull/11991))
+    - Vaultwarden: export VW_VERSION as version number [@MickLesk](https://github.com/MickLesk) ([#11966](https://github.com/community-scripts/ProxmoxVE/pull/11966))
+    - Zabbix: Improve zabbix-agent service detection [@MickLesk](https://github.com/MickLesk) ([#11968](https://github.com/community-scripts/ProxmoxVE/pull/11968))
 
-    - hwaccel: remove ROCm install from AMD APU setup [@MickLesk](https://github.com/MickLesk) ([#12958](https://github.com/community-scripts/ProxmoxVE/pull/12958))
+### ?? Core
 
-## 2026-03-15
+  - #### ? New Features
 
-### 🆕 New Scripts
+    - tools.func: ensure /usr/local/bin PATH persists for pct enter sessions [@MickLesk](https://github.com/MickLesk) ([#11970](https://github.com/community-scripts/ProxmoxVE/pull/11970))
 
-  - Yamtrack ([#12936](https://github.com/community-scripts/ProxmoxVE/pull/12936))
+  - #### ?? Refactor
 
-### 🚀 Updated Scripts
+    - core: remove duplicate error handler from alpine-install.func [@MickLesk](https://github.com/MickLesk) ([#11971](https://github.com/community-scripts/ProxmoxVE/pull/11971))
 
-  - #### 🐞 Bug Fixes
+### ?? Github
 
-    - Wishlist: use --frozen-lockfile for pnpm install [@MickLesk](https://github.com/MickLesk) ([#12892](https://github.com/community-scripts/ProxmoxVE/pull/12892))
-    - SparkyFitness: use --legacy-peer-deps for npm install [@MickLesk](https://github.com/MickLesk) ([#12888](https://github.com/community-scripts/ProxmoxVE/pull/12888))
-    - Frigate: add fallback for OpenVino labelmap file [@MickLesk](https://github.com/MickLesk) ([#12889](https://github.com/community-scripts/ProxmoxVE/pull/12889))
+  - github: add "website" label if "json" changed [@MickLesk](https://github.com/MickLesk) ([#11975](https://github.com/community-scripts/ProxmoxVE/pull/11975))
 
-  - #### 🔧 Refactor
+### ?? Website
 
-    - Refactor: ITSM-NG [@MickLesk](https://github.com/MickLesk) ([#12918](https://github.com/community-scripts/ProxmoxVE/pull/12918))
-    - core: unify RELEASE variable for check_for_gh_release and fetch_and_deploy [@MickLesk](https://github.com/MickLesk) ([#12917](https://github.com/community-scripts/ProxmoxVE/pull/12917))
-    - Standardize NSAPP names across VM scripts [@MickLesk](https://github.com/MickLesk) ([#12924](https://github.com/community-scripts/ProxmoxVE/pull/12924))
+  - #### ?? Script Information
 
-### 💾 Core
+    - Update Wishlist LXC webpage to include reverse proxy info [@summoningpixels](https://github.com/summoningpixels) ([#11973](https://github.com/community-scripts/ProxmoxVE/pull/11973))
+    - Update OpenCloud LXC webpage to include services ports [@summoningpixels](https://github.com/summoningpixels) ([#11969](https://github.com/community-scripts/ProxmoxVE/pull/11969))
 
-  - #### ✨ New Features
+## 2026-02-15
 
-    - core: retry downloads with exponential backoff [@MickLesk](https://github.com/MickLesk) ([#12896](https://github.com/community-scripts/ProxmoxVE/pull/12896))
+### ?? New Scripts
 
-### ❔ Uncategorized
+  - ebusd ([#11942](https://github.com/community-scripts/ProxmoxVE/pull/11942))
+- add: seer script and migrations [@CrazyWolf13](https://github.com/CrazyWolf13) ([#11930](https://github.com/community-scripts/ProxmoxVE/pull/11930))
 
-  - [go2rtc] Add ffmpeg dependency to install script [@Copilot](https://github.com/Copilot) ([#12944](https://github.com/community-scripts/ProxmoxVE/pull/12944))
+### ?? Updated Scripts
 
-## 2026-03-14
+  - #### ?? Bug Fixes
 
-### 🚀 Updated Scripts
+    - Fix seerr URL in jellyseerr script [@lucacome](https://github.com/lucacome) ([#11951](https://github.com/community-scripts/ProxmoxVE/pull/11951))
+    - Fix jellyseer and overseer script replacement [@lucacome](https://github.com/lucacome) ([#11949](https://github.com/community-scripts/ProxmoxVE/pull/11949))
+    - Tautulli: Add setuptools < 81 [@tremor021](https://github.com/tremor021) ([#11943](https://github.com/community-scripts/ProxmoxVE/pull/11943))
 
-  - #### 🐞 Bug Fixes
+  - #### ?? Breaking Changes
 
-    - Patchmon: remove v prefix from pinned version  [@MickLesk](https://github.com/MickLesk) ([#12891](https://github.com/community-scripts/ProxmoxVE/pull/12891))
+    - Refactor: Patchmon [@vhsdream](https://github.com/vhsdream) ([#11888](https://github.com/community-scripts/ProxmoxVE/pull/11888))
 
-### 💾 Core
+## 2026-02-14
 
-  - #### 🐞 Bug Fixes
+### ?? Updated Scripts
 
-    - tools.func: don't abort on AMD repo apt update failure [@MickLesk](https://github.com/MickLesk) ([#12890](https://github.com/community-scripts/ProxmoxVE/pull/12890))
+  - #### ?? Bug Fixes
 
-## 2026-03-13
+    - Increase disk allocation for OpenWebUI and Ollama to prevent installation failures [@Copilot](https://github.com/Copilot) ([#11920](https://github.com/community-scripts/ProxmoxVE/pull/11920))
 
-### 🚀 Updated Scripts
+### ?? Core
 
-  - #### 🐞 Bug Fixes
+  - #### ?? Bug Fixes
 
-    - Hotfix: Removed clean install usage from original script. [@nickheyer](https://github.com/nickheyer) ([#12870](https://github.com/community-scripts/ProxmoxVE/pull/12870))
+    - core: handle missing RAM speed in nested VMs [@MickLesk](https://github.com/MickLesk) ([#11913](https://github.com/community-scripts/ProxmoxVE/pull/11913))
 
-  - #### 🔧 Refactor
+  - #### ? New Features
 
-    - Discopanel: V2 Support + Script rewrite [@nickheyer](https://github.com/nickheyer) ([#12763](https://github.com/community-scripts/ProxmoxVE/pull/12763))
+    - core: overwriteable app version [@CrazyWolf13](https://github.com/CrazyWolf13) ([#11753](https://github.com/community-scripts/ProxmoxVE/pull/11753))
+    - core: validate container IDs cluster-wide across all nodes [@MickLesk](https://github.com/MickLesk) ([#11906](https://github.com/community-scripts/ProxmoxVE/pull/11906))
+    - core: improve error reporting with structured error strings and better categorization + output formatting [@MickLesk](https://github.com/MickLesk) ([#11907](https://github.com/community-scripts/ProxmoxVE/pull/11907))
+    - core: unified logging system with combined logs [@MickLesk](https://github.com/MickLesk) ([#11761](https://github.com/community-scripts/ProxmoxVE/pull/11761))
 
-### 🧰 Tools
+### ?? Tools
 
-  - update-apps: fix restore path, add PBS support and improve restore messages [@omertahaoztop](https://github.com/omertahaoztop) ([#12528](https://github.com/community-scripts/ProxmoxVE/pull/12528))
+  - lxc-updater: add patchmon aware [@failure101](https://github.com/failure101) ([#11905](https://github.com/community-scripts/ProxmoxVE/pull/11905))
 
-  - #### 🐞 Bug Fixes
+### ?? Website
 
-    - fix(pve-privilege-converter): handle already stopped container in manage_states [@liuqitoday](https://github.com/liuqitoday) ([#12765](https://github.com/community-scripts/ProxmoxVE/pull/12765))
+  - #### ?? Script Information
 
-### 📚 Documentation
+    - Disable UniFi script - APT packages no longer available [@Copilot](https://github.com/Copilot) ([#11898](https://github.com/community-scripts/ProxmoxVE/pull/11898))
 
-  - Update: Docs/website metadata workflow [@michelroegl-brunner](https://github.com/michelroegl-brunner) ([#12858](https://github.com/community-scripts/ProxmoxVE/pull/12858))
+## 2026-02-13
+
+### ?? Updated Scripts
+
+  - #### ?? Bug Fixes
+
+    - OpenWebUI: pin numba constraint [@MickLesk](https://github.com/MickLesk) ([#11874](https://github.com/community-scripts/ProxmoxVE/pull/11874))
+    - Planka: add migrate step to update function [@ZimmermannLeon](https://github.com/ZimmermannLeon) ([#11877](https://github.com/community-scripts/ProxmoxVE/pull/11877))
+    - Pangolin: switch sqlite-specific back to generic [@MickLesk](https://github.com/MickLesk) ([#11868](https://github.com/community-scripts/ProxmoxVE/pull/11868))
+    - [Hotfix] Jotty: Copy contents of config backup into /opt/jotty/config [@vhsdream](https://github.com/vhsdream) ([#11864](https://github.com/community-scripts/ProxmoxVE/pull/11864))
+
+  - #### ?? Refactor
+
+    - Refactor: Radicale [@vhsdream](https://github.com/vhsdream) ([#11850](https://github.com/community-scripts/ProxmoxVE/pull/11850))
+    - chore(donetick): add config entry for v0.1.73 [@tomfrenzel](https://github.com/tomfrenzel) ([#11872](https://github.com/community-scripts/ProxmoxVE/pull/11872))
+
+### ?? Core
+
+  - #### ?? Refactor
+
+    - core: retry reporting with fallback payloads [@MickLesk](https://github.com/MickLesk) ([#11885](https://github.com/community-scripts/ProxmoxVE/pull/11885))
+
+### ?? API
+
+  - #### ? New Features
+
+    - error-handler: Implement json_escape and enhance error handling [@MickLesk](https://github.com/MickLesk) ([#11875](https://github.com/community-scripts/ProxmoxVE/pull/11875))
+
+### ?? Website
+
+  - #### ?? Script Information
+
+    - SQLServer-2025: add PVE9/Kernel 6.x incompatibility warning [@MickLesk](https://github.com/MickLesk) ([#11829](https://github.com/community-scripts/ProxmoxVE/pull/11829))
+
+## 2026-02-12
+
+### ?? Updated Scripts
+
+  - #### ?? Bug Fixes
+
+    - EMQX: increase disk to 6GB and add optional MQ disable prompt [@MickLesk](https://github.com/MickLesk) ([#11844](https://github.com/community-scripts/ProxmoxVE/pull/11844))
+    - Increased the Grafana container default disk size. [@shtefko](https://github.com/shtefko) ([#11840](https://github.com/community-scripts/ProxmoxVE/pull/11840))
+    - Pangolin: Update database generation command in install script [@tremor021](https://github.com/tremor021) ([#11825](https://github.com/community-scripts/ProxmoxVE/pull/11825))
+    - Deluge: add python3-setuptools as dep [@MickLesk](https://github.com/MickLesk) ([#11833](https://github.com/community-scripts/ProxmoxVE/pull/11833))
+    - Dispatcharr: migrate to uv sync [@MickLesk](https://github.com/MickLesk) ([#11831](https://github.com/community-scripts/ProxmoxVE/pull/11831))
+
+  - #### ? New Features
+
+    - Archlinux-VM: fix LVM/LVM-thin storage and improve error reporting | VM's add correct exit_code for analytics [@MickLesk](https://github.com/MickLesk) ([#11842](https://github.com/community-scripts/ProxmoxVE/pull/11842))
+    - Debian13-VM: Optimize First Boot & add noCloud/Cloud Selection [@MickLesk](https://github.com/MickLesk) ([#11810](https://github.com/community-scripts/ProxmoxVE/pull/11810))
+
+### ?? Core
+
+  - #### ? New Features
+
+    - tools.func: auto-detect binary vs armored GPG keys in setup_deb822_repo [@MickLesk](https://github.com/MickLesk) ([#11841](https://github.com/community-scripts/ProxmoxVE/pull/11841))
+    - core: remove old Go API and extend misc/api.func with new backend [@MickLesk](https://github.com/MickLesk) ([#11822](https://github.com/community-scripts/ProxmoxVE/pull/11822))
+
+  - #### ?? Refactor
+
+    - error_handler: prevent stuck 'installing' status [@MickLesk](https://github.com/MickLesk) ([#11845](https://github.com/community-scripts/ProxmoxVE/pull/11845))
+
+### ?? Tools
+
+  - #### ?? Bug Fixes
+
+    - Tailscale: fix DNS check and keyrings directory issues [@MickLesk](https://github.com/MickLesk) ([#11837](https://github.com/community-scripts/ProxmoxVE/pull/11837))
+
+## 2026-02-11
+
+### ?? New Scripts
+
+  - Draw.io ([#11788](https://github.com/community-scripts/ProxmoxVE/pull/11788))
+
+### ?? Updated Scripts
+
+  - #### ?? Bug Fixes
+
+    - dispatcharr: include port 9191 in success-message [@MickLesk](https://github.com/MickLesk) ([#11808](https://github.com/community-scripts/ProxmoxVE/pull/11808))
+    - fix: make donetick 0.1.71 compatible [@tomfrenzel](https://github.com/tomfrenzel) ([#11804](https://github.com/community-scripts/ProxmoxVE/pull/11804))
+    - Kasm: Support new version URL format without hash suffix [@MickLesk](https://github.com/MickLesk) ([#11787](https://github.com/community-scripts/ProxmoxVE/pull/11787))
+    - LibreTranslate: Remove Torch [@tremor021](https://github.com/tremor021) ([#11783](https://github.com/community-scripts/ProxmoxVE/pull/11783))
+    - Snowshare: fix update script [@TuroYT](https://github.com/TuroYT) ([#11726](https://github.com/community-scripts/ProxmoxVE/pull/11726))
+
+  - #### ? New Features
+
+    - [Feature] OpenCloud: support PosixFS Collaborative Mode [@vhsdream](https://github.com/vhsdream) ([#11806](https://github.com/community-scripts/ProxmoxVE/pull/11806))
+
+### ?? Core
+
+  - #### ?? Refactor
+
+    - core: respect EDITOR variable for config editing [@ls-root](https://github.com/ls-root) ([#11693](https://github.com/community-scripts/ProxmoxVE/pull/11693))
+
+### ?? Documentation
+
+  - Fix formatting in kutt.json notes section [@tiagodenoronha](https://github.com/tiagodenoronha) ([#11774](https://github.com/community-scripts/ProxmoxVE/pull/11774))
+
+## 2026-02-10
+
+### ?? Updated Scripts
+
+  - #### ?? Bug Fixes
+
+    - Immich: Pin version to 2.5.6 [@vhsdream](https://github.com/vhsdream) ([#11775](https://github.com/community-scripts/ProxmoxVE/pull/11775))
+    - Libretranslate: Fix setuptools [@tremor021](https://github.com/tremor021) ([#11772](https://github.com/community-scripts/ProxmoxVE/pull/11772))
+    - Element Synapse: prevent systemd invoke failure during apt install [@MickLesk](https://github.com/MickLesk) ([#11758](https://github.com/community-scripts/ProxmoxVE/pull/11758))
+
+  - #### ? New Features
+
+    - Refactor: Slskd & Soularr [@vhsdream](https://github.com/vhsdream) ([#11674](https://github.com/community-scripts/ProxmoxVE/pull/11674))
+
+### ??? Deleted Scripts
+
+  - move paperless-exporter from LXC to addon ([#11737](https://github.com/community-scripts/ProxmoxVE/pull/11737))
+
+### ?? Tools
+
+  - #### ?? Bug Fixes
+
+    - feat: improve storage parsing & add guestname [@carlosmaroot](https://github.com/carlosmaroot) ([#11752](https://github.com/community-scripts/ProxmoxVE/pull/11752))
+
+### ?? Github
+
+  - Github-Version Workflow: include addon scripts in extraction [@MickLesk](https://github.com/MickLesk) ([#11757](https://github.com/community-scripts/ProxmoxVE/pull/11757))
+
+### ?? Website
+
+  - #### ?? Script Information
+
+    - Snowshare: fix typo in config file path on website [@BirdMakingStuff](https://github.com/BirdMakingStuff) ([#11754](https://github.com/community-scripts/ProxmoxVE/pull/11754))
+
+## 2026-02-09
+
+### ?? Updated Scripts
+
+  - #### ?? Bug Fixes
+
+    - several scripts: add --clear to uv venv calls for uv 0.10 compatibility [@MickLesk](https://github.com/MickLesk) ([#11723](https://github.com/community-scripts/ProxmoxVE/pull/11723))
+    - Koillection: ensure setup_composer is in update script [@MickLesk](https://github.com/MickLesk) ([#11734](https://github.com/community-scripts/ProxmoxVE/pull/11734))
+    - PeaNUT: symlink server.js after update [@vhsdream](https://github.com/vhsdream) ([#11696](https://github.com/community-scripts/ProxmoxVE/pull/11696))
+    - Umlautadaptarr: use release appsettings.json instead of hardcoded copy [@MickLesk](https://github.com/MickLesk) ([#11725](https://github.com/community-scripts/ProxmoxVE/pull/11725))
+    - tracearr: prepare for next stable release [@durzo](https://github.com/durzo) ([#11673](https://github.com/community-scripts/ProxmoxVE/pull/11673))
+
+  - #### ? New Features
+
+    - remove whiptail from update scripts for unattended update support [@MickLesk](https://github.com/MickLesk) ([#11712](https://github.com/community-scripts/ProxmoxVE/pull/11712))
+
+  - #### ?? Refactor
+
+    - Refactor: FileFlows [@tremor021](https://github.com/tremor021) ([#11108](https://github.com/community-scripts/ProxmoxVE/pull/11108))
+    - Refactor: wger [@MickLesk](https://github.com/MickLesk) ([#11722](https://github.com/community-scripts/ProxmoxVE/pull/11722))
+    - Nginx-UI: better User Handling | ACME [@MickLesk](https://github.com/MickLesk) ([#11715](https://github.com/community-scripts/ProxmoxVE/pull/11715))
+    - NginxProxymanager: use better-sqlite3 [@MickLesk](https://github.com/MickLesk) ([#11708](https://github.com/community-scripts/ProxmoxVE/pull/11708))
+
+### ?? Core
+
+  - #### ?? Refactor
+
+    - hwaccel: add libmfx-gen1.2 to Intel Arc setup for QSV support [@MickLesk](https://github.com/MickLesk) ([#11707](https://github.com/community-scripts/ProxmoxVE/pull/11707))
+
+### ?? Tools
+
+  - #### ?? Bug Fixes
+
+    - addons: ensure curl is installed before use [@MickLesk](https://github.com/MickLesk) ([#11718](https://github.com/community-scripts/ProxmoxVE/pull/11718))
+    - Netbird (addon): add systemd ordering to start after Docker [@MickLesk](https://github.com/MickLesk) ([#11716](https://github.com/community-scripts/ProxmoxVE/pull/11716))
+
+### ? Uncategorized
+
+  - Bichon: Update website [@tremor021](https://github.com/tremor021) ([#11711](https://github.com/community-scripts/ProxmoxVE/pull/11711))
+
+## 2026-02-08
+
+### ?? Updated Scripts
+
+  - #### ?? Bug Fixes
+
+    - feat(healthchecks): add sendalerts service [@Mika56](https://github.com/Mika56) ([#11694](https://github.com/community-scripts/ProxmoxVE/pull/11694))
+    - ComfyUI: Dynamic Fetch PyTorch Versions [@MickLesk](https://github.com/MickLesk) ([#11657](https://github.com/community-scripts/ProxmoxVE/pull/11657))
+
+  - #### ?? Breaking Changes
+
+    - Semaphore: switch from Debian  to Ubuntu 24.04 [@MickLesk](https://github.com/MickLesk) ([#11670](https://github.com/community-scripts/ProxmoxVE/pull/11670))
+
+## 2026-02-07
+
+### ?? New Scripts
+
+  - Checkmate ([#11672](https://github.com/community-scripts/ProxmoxVE/pull/11672))
+- Bichon ([#11671](https://github.com/community-scripts/ProxmoxVE/pull/11671))
+
+### ?? Updated Scripts
+
+  - #### ?? Bug Fixes
+
+    - NocoDB: pin to v0.301.1 [@MickLesk](https://github.com/MickLesk) ([#11655](https://github.com/community-scripts/ProxmoxVE/pull/11655))
+    - Pin Memos to v0.25.3 - last version with release binaries [@MickLesk](https://github.com/MickLesk) ([#11658](https://github.com/community-scripts/ProxmoxVE/pull/11658))
+    - Downgrade: OpenProject | NginxProxyManager | Semaphore to Debian 12 due to persistent SHA1 issues  [@MickLesk](https://github.com/MickLesk) ([#11654](https://github.com/community-scripts/ProxmoxVE/pull/11654))
+
+### ?? Core
+
+  - #### ? New Features
+
+    - tools: fallback to previous release when asset is missing [@MickLesk](https://github.com/MickLesk) ([#11660](https://github.com/community-scripts/ProxmoxVE/pull/11660))
+
+### ?? Documentation
+
+  - fix(setup): correctly auto-detect username when using --full [@ls-root](https://github.com/ls-root) ([#11650](https://github.com/community-scripts/ProxmoxVE/pull/11650))
+
+### ?? Website
+
+  - #### ? New Features
+
+    - feat(frontend): add JSON script import functionality [@ls-root](https://github.com/ls-root) ([#11563](https://github.com/community-scripts/ProxmoxVE/pull/11563))
+
+## 2026-02-06
+
+### ?? New Scripts
+
+  - Nightscout ([#11621](https://github.com/community-scripts/ProxmoxVE/pull/11621))
+- PVE LXC Apps Updater [@MickLesk](https://github.com/MickLesk) ([#11533](https://github.com/community-scripts/ProxmoxVE/pull/11533))
+
+### ?? Updated Scripts
+
+  - #### ?? Bug Fixes
+
+    - Immich: supress startup messages for immich-admin [@vhsdream](https://github.com/vhsdream) ([#11635](https://github.com/community-scripts/ProxmoxVE/pull/11635))
+    - Semaphore: Change Ubuntu release from 'jammy' to 'noble' [@MickLesk](https://github.com/MickLesk) ([#11625](https://github.com/community-scripts/ProxmoxVE/pull/11625))
+    - Pangolin: replace build:sqlite with db:generate + build [@MickLesk](https://github.com/MickLesk) ([#11616](https://github.com/community-scripts/ProxmoxVE/pull/11616))
+    - [FIX] OpenCloud: path issues [@vhsdream](https://github.com/vhsdream) ([#11593](https://github.com/community-scripts/ProxmoxVE/pull/11593))
+    - [FIX] Homepage: preserve public/images & public/icons if they exist [@vhsdream](https://github.com/vhsdream) ([#11594](https://github.com/community-scripts/ProxmoxVE/pull/11594))
+
+  - #### ? New Features
+
+    - Shelfmark: remove Chromedriver dep, add URL_BASE env [@vhsdream](https://github.com/vhsdream) ([#11619](https://github.com/community-scripts/ProxmoxVE/pull/11619))
+    - Immich: pin to v2.5.5 [@vhsdream](https://github.com/vhsdream) ([#11598](https://github.com/community-scripts/ProxmoxVE/pull/11598))
+
+  - #### ?? Refactor
+
+    - refactor: homepage [@CrazyWolf13](https://github.com/CrazyWolf13) ([#11605](https://github.com/community-scripts/ProxmoxVE/pull/11605))
+
+### ?? Core
+
+  - #### ?? Bug Fixes
+
+    - fix(core): spinner misalignment [@ls-root](https://github.com/ls-root) ([#11627](https://github.com/community-scripts/ProxmoxVE/pull/11627))
+
+  - #### ?? Refactor
+
+    - [Fix] build.func: QOL grammar adjustment for Creating LXC message [@vhsdream](https://github.com/vhsdream) ([#11633](https://github.com/community-scripts/ProxmoxVE/pull/11633))
+
+### ?? Documentation
+
+  - [gh] Update to the New Script request template [@tremor021](https://github.com/tremor021) ([#11612](https://github.com/community-scripts/ProxmoxVE/pull/11612))
+
+### ?? Website
+
+  - #### ?? Script Information
+
+    - Update LXC App Updater JSON to reflect tag override option [@vhsdream](https://github.com/vhsdream) ([#11626](https://github.com/community-scripts/ProxmoxVE/pull/11626))
+
+### ? Uncategorized
+
+  - Opencloud: fix JSON [@vhsdream](https://github.com/vhsdream) ([#11617](https://github.com/community-scripts/ProxmoxVE/pull/11617))
