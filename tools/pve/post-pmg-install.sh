@@ -69,7 +69,7 @@ repo_state() {
       file="$f"
       if [[ "$f" == *.sources ]]; then
         # deb822 format: check Enabled field
-        if grep -qiE '^Enabled:\s*no' "$f"; then
+        if grep -qiE '^Enabled:\s*(no|false)' "$f"; then
           state="disabled"
         else
           state="active"

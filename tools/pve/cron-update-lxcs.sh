@@ -71,7 +71,7 @@ review_script() {
 
 remove_legacy_cron() {
   if crontab -l -u root 2>/dev/null | grep -q "update-lxcs-cron.sh"; then
-    (crontab -l -u root 2>/dev/null | grep -v "update-lxcs-cron.sh") | crontab -u root -
+    (crontab -l -u root 2>/dev/null | grep -v "update-lxcs-cron.sh" || true) | crontab -u root -
     ok "Removed legacy curl-based cron entry"
   fi
 }
@@ -137,7 +137,7 @@ CONF
 
 remove() {
   if crontab -l -u root 2>/dev/null | grep -q "${LOCAL_SCRIPT}"; then
-    (crontab -l -u root 2>/dev/null | grep -v "${LOCAL_SCRIPT}") | crontab -u root -
+    (crontab -l -u root 2>/dev/null | grep -v "${LOCAL_SCRIPT}" || true) | crontab -u root -
     ok "Removed cron schedule"
   fi
   remove_legacy_cron
@@ -299,7 +299,7 @@ show_status() {
   if [[ -f "$LOG_FILE" ]]; then
     local log_size last_run
     log_size=$(du -h "$LOG_FILE" | awk '{print $1}')
-    last_run=$(grep -oP '^\s+\K\w.*' "$LOG_FILE" | tail -1)
+    last_run=$(grep -oP '^\s+\K\w.*' "$LOG_FILE" | tail -1 || true)
     echo -e "   \e[36mLog file:\e[0m  ${LOG_FILE} (${log_size})"
     [[ -n "${last_run:-}" ]] && echo -e "   \e[36mLast run:\e[0m  ${last_run}"
   else

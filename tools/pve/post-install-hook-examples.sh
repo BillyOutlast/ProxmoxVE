@@ -55,6 +55,9 @@
 #       in Advanced Settings.
 # ============================================================================
 
+echo "post-install-hook-examples.sh is an example library; copy one block into its own hook file instead of running it." >&2
+exit 1
+
 # ============================================================================
 # ▼▼▼ EXAMPLE 1 — BEGIN ▼▼▼
 # ----------------------------------------------------------------------------

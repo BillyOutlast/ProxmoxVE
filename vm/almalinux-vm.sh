@@ -24,21 +24,13 @@ THIN="discard=on,ssd=1,"
 set -e
 trap 'error_handler $LINENO "$BASH_COMMAND"' ERR
 trap cleanup EXIT
-trap 'post_update_to_api "failed" "INTERRUPTED"' SIGINT
-trap 'post_update_to_api "failed" "TERMINATED"' SIGTERM
-
-function error_handler() {
-  local exit_code="$?"
-  local line_number="$1"
-  local command="$2"
-  local error_message="${RD}[ERROR]${CL} in line ${RD}$line_number${CL}: exit code ${RD}$exit_code${CL}: while executing command ${YW}$command${CL}"
-  post_update_to_api "failed" "${command}"
-  echo -e "\n$error_message\n"
-  cleanup_vmid
-}
+trap 'post_update_to_api "failed" "130"' SIGINT
+trap 'post_update_to_api "failed" "143"' SIGTERM
 
 TEMP_DIR=$(mktemp -d)
 pushd "$TEMP_DIR" >/dev/null
+
+vm_preflight
 
 if [[ "${VM_UNATTENDED:-0}" == "1" ]]; then
   var_version="${VM_OS_VERSION:-$var_version}"
@@ -163,33 +155,10 @@ virt-customize -q -a "$WORK_FILE" --selinux-relabel >/dev/null 2>&1 || true
 msg_ok "Customized image"
 
 STORAGE_TYPE=$(pvesm status -storage "$STORAGE" | awk 'NR>1 {print $2}')
-case $STORAGE_TYPE in
-nfs | dir)
-  DISK_EXT=".qcow2"
-  DISK_REF="$VMID/"
-  DISK_IMPORT="-format qcow2"
-  THIN=""
-  ;;
-btrfs)
-  DISK_EXT=".raw"
-  DISK_REF="$VMID/"
-  DISK_IMPORT="-format raw"
-  FORMAT=",efitype=4m"
-  THIN=""
-  ;;
-*)
-  DISK_EXT=""
-  DISK_REF=""
-  DISK_IMPORT="-format raw"
-  ;;
-esac
-for i in {0,1,2}; do
-  disk="DISK$i"
-  eval DISK"${i}"=vm-"${VMID}"-disk-"${i}"${DISK_EXT:-}
-  eval DISK"${i}"_REF="${STORAGE}":"${DISK_REF:-}""${!disk}"
-done
+vm_apply_storage_layout "$STORAGE_TYPE"
+vm_define_disk_references 3
 
-if [[ "$STORAGE_TYPE" != "nfs" && "$STORAGE_TYPE" != "dir" ]]; then
+if [[ "$DISK_IMPORT_FORMAT" == "raw" ]]; then
   msg_info "Converting image to raw format"
   RAW_FILE=$(mktemp --suffix=.raw)
   qemu-img convert -f qcow2 -O raw "$WORK_FILE" "$RAW_FILE"
@@ -203,7 +172,7 @@ qm create "$VMID" -agent 1${MACHINE} -tablet 0 -localtime 1 -bios ovmf${CPU_TYPE
   -name "$HN" -tags community-script -net0 virtio,bridge="$BRG",macaddr="$MAC""$VLAN""$MTU" -onboot 1 -ostype l26 -scsihw virtio-scsi-pci
 vm_alloc_efi_disk "$DISK0"
 pvesm alloc "$STORAGE" "$VMID" "$DISK2" 4M 1>&/dev/null
-qm importdisk "$VMID" "${WORK_FILE}" "$STORAGE" ${DISK_IMPORT:-} 1>&/dev/null
+qm importdisk "$VMID" "${WORK_FILE}" "$STORAGE" -format "$DISK_IMPORT_FORMAT" 1>&/dev/null
 qm set "$VMID" \
   -efidisk0 "${DISK0_REF}"${FORMAT} \
   -scsi0 "${DISK1_REF}",${DISK_CACHE}${THIN}size="${DISK_SIZE}" \

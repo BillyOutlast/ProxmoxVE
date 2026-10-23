@@ -71,14 +71,24 @@ body:
     validations:
       required: true
 
-  - type: checkboxes
+  - type: dropdown
     id: minimum-stars
     attributes:
       label: Minimum Adoption Requirement
       description: Confirm that you have verified the project's public adoption.
       options:
-        - label: The official source repository has at least 1,000 stars.
-          required: true
+        - The official source repository has at least 1,000 stars.
+        - The repository has fewer than 1,000 stars; I am requesting an exception (evidence below).
+    validations:
+      required: true
+
+  - type: textarea
+    id: adoption-evidence
+    attributes:
+      label: Adoption Evidence
+      description: Only needed when requesting an exception. Link the verifiable public adoption signal (downloads, packaging, press, etc.).
+    validations:
+      required: false
 
   - type: textarea
     id: app-description

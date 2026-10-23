@@ -213,7 +213,7 @@ pick_containers_multi() {
 
 manual_smb_test() {
   header_info
-  local server share username password domain vers mount_dir mount_opts
+  local server share username password domain vers mount_dir mount_opts cred_file
 
   server=$(read_input "SMB Test" "SMB server/IP (e.g. 10.0.1.9)") || return
   share=$(read_input "SMB Test" "Share name (without leading //)" "Proxmox") || return
@@ -225,19 +225,25 @@ manual_smb_test() {
 
   mkdir -p "$mount_dir"
 
-  mount_opts="username=${username},password=${password},vers=${vers},sec=ntlmssp"
-  if [[ -n "$domain" ]]; then
-    mount_opts+=";domain=${domain}"
-  fi
+  # Credentials file keeps the password off the command line and allows commas in it
+  cred_file=$(mktemp)
+  chmod 600 "$cred_file"
+  {
+    echo "username=${username}"
+    echo "password=${password}"
+    [[ -n "$domain" ]] && echo "domain=${domain}"
+  } >"$cred_file"
+  mount_opts="credentials=${cred_file},vers=${vers},sec=ntlmssp"
 
   msg_info "Testing SMB mount on ${mount_dir}"
-  if mount -t cifs "//${server}/${share}" "$mount_dir" -o "${mount_opts//;/,}" >/dev/null 2>&1; then
+  if mount -t cifs "//${server}/${share}" "$mount_dir" -o "$mount_opts" >/dev/null 2>&1; then
     touch "${mount_dir}/smb-test-$(date +%s)" >/dev/null 2>&1 || true
     umount "$mount_dir" >/dev/null 2>&1 || true
     msg_ok "SMB test successful"
   else
     msg_error "SMB test failed. Check network/firewall/credentials/share permissions."
   fi
+  rm -f "$cred_file"
 
   pause
 }

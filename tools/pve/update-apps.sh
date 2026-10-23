@@ -508,7 +508,9 @@ for container in $CHOICE; do
   fi
 
   #0.5) Rewrite a retired Gitea base before anything reads it.
-  repair_update_url "$container"
+  if [[ "$var_dry_run" != "yes" ]]; then
+    repair_update_url "$container"
+  fi
 
   #1) Detect service using the service name in the update command
   detect_service $container
@@ -593,6 +595,9 @@ for container in $CHOICE; do
     dry_run_container "$container" "$service"
     log_result "$container" "$service" "DRY-RUN" "${DRY_RUN_RESULT:-version check only}"
     log_write "Container $container ($service): DRY-RUN — ${DRY_RUN_RESULT:-version check only}"
+    if [ "$template" == "false" ] && [ "$status" == "status: stopped" ]; then
+      pct shutdown $container &>/dev/null &
+    fi
     continue
   fi
 

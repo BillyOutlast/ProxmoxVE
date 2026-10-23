@@ -38,9 +38,15 @@ vm_preflight
 vm_require_tools jq xz
 
 for channel in stable beta dev; do
-  channel_version="$(curl -fsSL "https://raw.githubusercontent.com/home-assistant/version/master/${channel}.json" | jq -er '.hassos["generic-aarch64"]')"
+  channel_version="$(curl -fsSL "https://raw.githubusercontent.com/home-assistant/version/master/${channel}.json" | jq -er '.hassos["generic-aarch64"]' 2>/dev/null)" || channel_version=""
   printf -v "${channel^^}" '%s' "$channel_version"
 done
+if [[ -z "$STABLE" ]]; then
+  msg_error "Could not determine the stable Home Assistant OS version"
+  exit 1
+fi
+BETA="${BETA:-$STABLE}"
+DEV="${DEV:-$STABLE}"
 
 function default_settings() {
   METHOD="default"

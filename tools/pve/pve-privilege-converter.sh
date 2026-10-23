@@ -143,7 +143,7 @@ manage_states() {
       if pct status "$CONTAINER_ID" | grep -q running; then
         read -rp "Timeout reached. Force shutdown? [Y/n]: " force
         if [[ ${force:-Y} =~ ^[Yy] ]]; then
-          pkill -9 -f "lxc-start -F -n $CONTAINER_ID"
+          pct stop "$CONTAINER_ID"
         fi
       fi
     else

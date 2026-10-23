@@ -112,8 +112,10 @@ while true; do
       fi
       # Read the IP from the host side; pct exec depends on tools inside the
       # guest, which minimal/OCI images may lack.
-      IP=$(lxc-info -n "$instance" -iH 2>/dev/null | awk '/^[0-9.]+$/ && !/^(127|169\.254)\./ {print; exit}')
-      if [ -z "$IP" ] || ! ping -c 1 -W 2 "$IP" >/dev/null 2>&1; then
+      IP=$(lxc-info -n "$instance" -iH 2>/dev/null | awk '(/^[0-9.]+$/ && !/^(127|169\.254)\./) || (/:/ && !/^(fe80:|::1$)/) {print; exit}')
+      if [ -z "$IP" ]; then
+        echo "CT $instance has no usable IP address, skipping responsiveness check"
+      elif ! ping -c 1 -W 2 "$IP" >/dev/null 2>&1; then
         echo "$(date): CT $instance is not responding, restarting..."
         pct stop "$instance" >/dev/null 2>&1
         sleep 5

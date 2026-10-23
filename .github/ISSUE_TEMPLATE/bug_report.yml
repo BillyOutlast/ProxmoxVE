@@ -13,7 +13,7 @@ body:
         **Reports without a verbose log will most likely be closed.**
 
         **2. Search before you post.**
-        Check the [closed issues](https://github.com/community-scripts/ProxmoxVE/issues?q=is%3Aissue+is%3Aclosed) and the [Discussions](https://github.com/community-scripts/ProxmoxVE/discussions) (*Announcement* / *Guide*). If it is already known, comment there instead of opening a new issue.
+        Check this repository's [issues](https://github.com/Heretek-AI/ProxmoxVE/issues?q=is%3Aissue) first. For scripts shared with upstream, also check the upstream [closed issues](https://github.com/community-scripts/ProxmoxVE/issues?q=is%3Aissue+is%3Aclosed) and [Discussions](https://github.com/community-scripts/ProxmoxVE/discussions) (*Announcement* / *Guide*). If it is already known, comment there instead of opening a new issue.
 
         **3. Read the script.**
         Knowing what it does makes it much easier to describe the problem - and often to solve it yourself.

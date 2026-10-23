@@ -1120,7 +1120,7 @@ is_verbose_mode() {
 # ------------------------------------------------------------------------------
 configure_http_proxy() {
   local proxy="${HTTP_PROXY:-${http_proxy:-${var_http_proxy:-}}}"
-  local noproxy="${HTTP_NO_PROXY:-${no_proxy:-${var_http_no_proxy:-}}}"
+  local noproxy="${NO_PROXY:-${HTTP_NO_PROXY:-${no_proxy:-${var_http_no_proxy:-}}}}"
   [[ -z "$proxy" ]] && return 0
   [[ -z "$noproxy" ]] && noproxy="localhost,127.0.0.1,.local"
 
@@ -1916,13 +1916,13 @@ function get_lxc_ip() {
         fi
       done
 
-      return 6
+      return 123
     }
 
     LOCAL_IP="$(get_current_ip || true)"
     if [[ -z "$LOCAL_IP" ]]; then
       msg_error "Could not determine LOCAL_IP (checked: eth0, hostname -I, ip route, IPv6 targets)"
-      return 6
+      return 123
     fi
   fi
 

@@ -1050,6 +1050,11 @@ telemetry_new_attempt() {
   EXECUTION_ID="$(cat /proc/sys/kernel/random/uuid 2>/dev/null || echo "${RANDOM_UUID}-r$RANDOM")"
   POST_TO_API_DONE=false
   POST_UPDATE_DONE=false
+  # Drop the previous attempt's error capture so _tm_find_errinfo can't reuse it
+  [[ -n "${TELEMETRY_ERRINFO:-}" ]] && rm -f "$TELEMETRY_ERRINFO"
+  rm -f "/tmp/.errinfo-${SESSION_ID:-none}"
+  [[ -n "${INSTALL_LOG:-}" ]] && rm -f "${INSTALL_LOG}.errinfo"
+  [[ -n "${BUILD_LOG:-}" ]] && rm -f "${BUILD_LOG}.errinfo"
   unset FAILED_COMMAND FAILED_LINE ERROR_CATEGORY_OVERRIDE TELEMETRY_ERRINFO
   export EXECUTION_ID
 }

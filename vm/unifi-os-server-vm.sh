@@ -186,17 +186,6 @@ if [[ ${SYSTEM_FREE_DISK_GB} -lt 10 ]]; then
 fi
 msg_ok "System resources: ${SYSTEM_RAM_GB}GB RAM, ${SYSTEM_FREE_DISK_GB}GB free disk"
 
-if command -v ufw &>/dev/null; then
-  if ufw status verbose | grep -q "Status: active"; then
-    msg_info "Setting up firewall rules for UniFi OS Server ports"
-    ufw allow 11443/tcp 2>/dev/null
-    ufw allow 8080/tcp 2>/dev/null
-    ufw allow 3478/tcp 2>/dev/null
-    ufw allow 3478/udp 2>/dev/null
-    msg_ok "Firewall rules configured"
-  fi
-fi
-
 vm_select_storage "$HN"
 
 # Fetch latest UniFi OS Server version and download URL

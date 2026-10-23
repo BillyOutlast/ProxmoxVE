@@ -65,7 +65,10 @@ validate_container_id() {
 }
 
 get_valid_container_id() {
-  local suggested_id="${1:-$(pvesh get /cluster/nextid 2>/dev/null || echo 100)}"
+  local suggested_id="${1:-}"
+  if [[ ! "$suggested_id" =~ ^[0-9]+$ ]] || ((suggested_id < 100)); then
+    suggested_id=$(pvesh get /cluster/nextid 2>/dev/null || echo 100)
+  fi
   while ! validate_container_id "$suggested_id"; do
     suggested_id=$((suggested_id + 1))
   done
@@ -141,7 +144,7 @@ turnkey_cleanup() {
       post_update_to_api "failed" "$exit_code" 2>/dev/null || true
     fi
     # Destroy failed container
-    if [[ -n "${CTID:-}" ]]; then
+    if [[ "${CT_CREATE_SUCCEEDED:-}" == "true" && -n "${CTID:-}" ]]; then
       cleanup_ctid 2>/dev/null || true
     fi
   fi
@@ -312,6 +315,7 @@ pct create "$CTID" "${TEMPLATE_STORAGE}:vztmpl/${TEMPLATE}" "${PCT_OPTIONS[@]}" 
   msg_error "Failed to create container"
   exit 1
 }
+CT_CREATE_SUCCEEDED=true
 msg_ok "Created LXC container (ID: ${BL}${CTID}${CL})"
 
 # Save credentials securely
