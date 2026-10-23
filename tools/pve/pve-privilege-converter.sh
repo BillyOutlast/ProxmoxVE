@@ -10,8 +10,8 @@ if ! command -v curl >/dev/null 2>&1; then
   apt-get update >/dev/null 2>&1
   apt-get install -y curl >/dev/null 2>&1
 fi
-source <(curl -fsSL https://git.community-scripts.org/community-scripts/ProxmoxVE/raw/branch/main/misc/core.func)
-source <(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/misc/api.func) 2>/dev/null || true
+source <(curl -fsSL "${COMMUNITY_SCRIPTS_CORE_URL:-https://raw.githubusercontent.com/community-scripts/core/main}/core/core.func")
+source <(curl -fsSL "${COMMUNITY_SCRIPTS_CORE_URL:-https://raw.githubusercontent.com/community-scripts/core/main}/api/api.func") 2>/dev/null || true
 load_functions
 declare -f init_tool_telemetry &>/dev/null && init_tool_telemetry "pve-privilege-converter" "pve"
 
@@ -134,16 +134,20 @@ manage_states() {
   read -rp "Shutdown source and start new container? [Y/n]: " answer
   answer=${answer:-Y}
   if [[ $answer =~ ^[Yy] ]]; then
-    pct shutdown "$CONTAINER_ID"
-    for i in {1..36}; do
-      sleep 5
-      ! pct status "$CONTAINER_ID" | grep -q running && break
-    done
     if pct status "$CONTAINER_ID" | grep -q running; then
-      read -rp "Timeout reached. Force shutdown? [Y/n]: " force
-      if [[ ${force:-Y} =~ ^[Yy] ]]; then
-        pkill -9 -f "lxc-start -F -n $CONTAINER_ID"
+      pct shutdown "$CONTAINER_ID"
+      for i in {1..36}; do
+        sleep 5
+        ! pct status "$CONTAINER_ID" | grep -q running && break
+      done
+      if pct status "$CONTAINER_ID" | grep -q running; then
+        read -rp "Timeout reached. Force shutdown? [Y/n]: " force
+        if [[ ${force:-Y} =~ ^[Yy] ]]; then
+          pct stop "$CONTAINER_ID"
+        fi
       fi
+    else
+      msg_custom "ℹ️" "\e[36m" "Source container $CONTAINER_ID is already stopped"
     fi
     pct start "$NEW_CONTAINER_ID"
     msg_ok "New container started"
